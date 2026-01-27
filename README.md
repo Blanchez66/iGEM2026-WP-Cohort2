@@ -1,22 +1,6 @@
-# iGEM24-WP-Tutorial
-> Tutorial for ZJU-China 2024 WP Wiki
+# iGEM26-WP-Tutorial-Basic
+> Tutorial for ZJU-China 2026 WP Wiki
 
-> [!NOTE]
->
-> 两位好鸭！本仓库包含了 iGEM Wiki 官方框架，想提前熟悉一下的可以自取。
->
-> 有疑问可以戳我，可以帮忙 debug 但不会帮忙写 hhh。
-> 
-> **感谢[咕泳蜇老师](https://github.com/waterrrrrrrr)提出的众多修改意见**，常见问题的解决方案请跳转至 [这一节](https://github.com/triplepiers/iGEM24-WP-Tutorial?tab=readme-ov-file#5-other-tips)
-
-<details><summary>两位老师用于 WP 2024 施工的 GitHub 仓库（欢迎互相串门）</summary>
-
-| Name | Repo | Site |
-| :---: | :-- | :-- |
-| YJL | [iGEM24-WP-Tutorial](https://github.com/waterrrrrrrr/iGEM24-WP-Tutorial) | [Here](https://waterrrrrrrr.github.io/iGEM24-WP-Tutorial/) |
-| YYW | [Default](https://github.com/B-vvayne/B-vvayne.github.io) | [Here](https://b-vvayne.github.io/) |
-
-</details>
 
 ## 1 Requirements
 

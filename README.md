@@ -1,14 +1,11 @@
 # iGEM26-WP-Tutorial-Basic
 > Tutorial for ZJU-China 2026 WP Wiki
 
-
 ## 1 Requirements
 
-- The final version of Wiki should be deployed as a `GitHub Pages Site` before <span style="color:red;">2024.02.24 0:00</span>
+- The final version of Wiki should be deployed as a `GitHub Pages Site` before <span style="color:red;">2026.02.22 24:00</span>
 
 - HTML and all sort of source code MUST be committed to the Team Wiki repository on GitHub Repo
-
-- `iframes` are NOT allowed
 
 - On every page, teams must add a clear and visible link to the team GitHub Repo
 
@@ -18,6 +15,8 @@
 
 - These are URLs for all the Wikis created by ZJU-China:
     > You can visit other team's Wiki by modifiying the LAST part of the URL
+    - 2025: <a href="https://2025.igem.wiki/zju-china" target="_blank">LUMA MANTA</a>
+    - 2024: <a href="https://2024.igem.wiki/zju-china" target="_blank">Neovio Dye</a>
     - 2023: <a href="https://2023.igem.wiki/zju-china" target="_blank">Flora Sentinel</a>
     - 2022: <a href="https://2022.igem.wiki/zju-china" target="_blank">StoryLight</a>
     - 2021: <a href="https://2021.igem.org/Team:ZJU-China" target="_blank">ViruGuard</a>

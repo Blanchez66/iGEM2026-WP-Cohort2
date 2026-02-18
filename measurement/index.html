@@ -4,25 +4,37 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="shortcut icon" href="../static/img/logo2.svg"/>
     <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
 
     <!-- Bootstrap CSS -->
-    <link href="../static/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../static/style.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <title>Measurement | ZJU-China - iGEM 2023</title>
+    <title>Measurement | iGEM Winter Project</title>
 
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#toc-sidebar" data-bs-offset="100">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
+  <div class="container-fluid">
 
     <!---- TEAM NAME ---->
-    <a class="navbar-brand" href="#">ZJU-China</a>
+    <a class="navbar-brand ps-5 d-flex align-items-center" href="#">
+      <span style="color: #527379; font-family: 'Caveat', cursive; font-size: 1.8rem; margin-right: 12px;">IGNITE</span>
+      <img src="../static/img/logo2.svg" alt="logo" height="30">
+    </a>
 
     <!---- SMALL SCREEN MENU ICON ---->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +42,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto left-aligned">
+      <ul class="navbar-nav ms-auto pe-3">
 
         <!---- HOME ---->
         <li class="nav-item">
@@ -43,7 +55,7 @@
             Team
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../team/index.html">Team</a></li>
+            <li><a class="dropdown-item" href="../team/index.html">Members</a></li>
             <li><a class="dropdown-item" href="../attributions/index.html">Attributions</a></li>
           </ul>
         </li>
@@ -54,41 +66,51 @@
             Project
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../contribution/index.html">Contribution</a></li>
             <li><a class="dropdown-item" href="../description/index.html">Description</a></li>
             <li><a class="dropdown-item" href="../design/index.html">Design</a></li>
             <li><a class="dropdown-item" href="../engineering/index.html">Engineering</a></li>
-            <li><a class="dropdown-item" href="../experiments/index.html">Experiments</a></li>
-            <li><a class="dropdown-item" href="../notebook/index.html">Notebook</a></li>
             <li><a class="dropdown-item" href="../results/index.html">Results</a></li>
+            <li><a class="dropdown-item" href="../contribution/index.html">Contribution</a></li>
           </ul>
         </li>
 
-        <!---- SAFETY ---->
-        <li class="nav-item">
-          <a class="nav-link" href="../safety/index.html">Safety</a>
-        </li>
-
-        <!---- HUMAN PRACTICES ---->
-        <li class="nav-item">
-          <a class="nav-link" href="../human-practices/index.html">Human Practices</a>
-        </li>
-
-        <!---- AWARDS ---->
+        <!---- Wet Lab ---->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Awards
+            Wet Lab
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../education/index.html">Education</a></li>
-            <li><a class="dropdown-item" href="../entrepreneurship/index.html">Entrepreneurship</a></li>
-            <li><a class="dropdown-item" href="../hardware/index.html">Hardware</a></li>
-            <li><a class="dropdown-item" href="../inclusivity/index.html">Inclusivity</a></li>
+            <li><a class="dropdown-item" href="../experiments/index.html">Experiments</a></li>
+            <li><a class="dropdown-item" href="../notebook/index.html">Notebook</a></li>
             <li><a class="dropdown-item" href="index.html">Measurement</a></li>
-            <li><a class="dropdown-item" href="../model/index.html">Model</a></li>
             <li><a class="dropdown-item" href="../plant/index.html">Plant</a></li>
+            <li><a class="dropdown-item" href="../safety/index.html">Safety and Security</a></li>
+          </ul>
+        </li>
+
+        <!---- Dry Lab ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dry Lab
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="../model/index.html">Model</a></li>
             <li><a class="dropdown-item" href="../software/index.html">Software</a></li>
-            <li><a class="dropdown-item" href="../sustainable/index.html">Sustainable</a></li>
+            <li><a class="dropdown-item" href="../hardware/index.html">Hardware</a></li>
+          </ul>
+        </li>
+
+        <!---- Engagement ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Engagement
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="../entrepreneurship/index.html">Entrepreneurship</a></li>
+            <li><a class="dropdown-item" href="../human-practices/index.html">Human Practices</a></li>
+            <li><a class="dropdown-item" href="../education/index.html">Education</a></li>
+            <li><a class="dropdown-item" href="../inclusivity/index.html">Inclusivity</a></li>
+            <li><a class="dropdown-item" href="../sustainable/index.html">Sustainability</a></li>
           </ul>
         </li>
 
@@ -98,94 +120,79 @@
 </nav>
 
   <!-- Header -->
-  <header class="bg-hero py-5 mb-5">
+  
+  <header class="py-5 mb-5" style="background-color: #f7f7f5;">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2">Measurement</h1>
-	        <p class="lead mb-5 text-white-50">Synthetic Biology needs great measurement approaches for characterizing parts, and efficient new methods for characterizing many parts at once. Describe your measurement approaches on this page.</p>
+          <h1 class="display-4 mt-5 mb-2">Measurement</h1>
+	        <p class="lead mb-5">Synthetic Biology needs great measurement approaches for characterizing parts, and efficient new methods for characterizing many parts at once. Describe your measurement approaches on this page.</p>
         </div>
       </div>
     </div>
   </header>
+  
 
   <!-- Page Content -->
+  
   <div class="container">
-    
+    <div class="row">
+      
+        <!-- Sidebar -->
+        <div class="col-lg-3">
+          <nav id="toc-sidebar" class="sticky-top vh-100 overflow-auto pe-3">
+            <h5>On this page</h5>
+            <ul class="nav nav-pills flex-column"></ul>
+          </nav>
+        </div>
+      
+      <!-- Main Content -->
+      <div id="main-content" class="col-lg-9">
+        
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Best Measurement</h4>
-      <p>There are a lot of exciting Parts in the Registry, but many Parts have still not been characterized. Designing great measurement approaches for characterizing new parts, or developing and implementing an efficient new method for characterizing thousands of parts are good examples.</p>
-      <p>To compete for the Best Measurement prize, please describe your work on this page and also fill out the description on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a>.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2023 Awards Page</a> for more information.</p>
+
+
+      </div>
     </div>
   </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Overview</h2>
-    <hr>
-    <p> If you've done excellent work in measurement, you should consider nominating your team for this special prize. Synthetic Biology needs great measurement approaches for characterizing parts, and efficient new methods for characterizing many parts at once. If you've done something exciting in the area of Measurement, describe it here!</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="http://2018.igem.org/Team:UC_Davis/Measurement">2018 UC Davis</a></li>
-      <li><a href="https://2019.igem.org/Team:Newcastle/Measurement">2019 Newcastle</a></li>
-      <li><a href="https://2019.igem.org/Team:Evry_Paris-Saclay/Measurement">2019 Evry Paris Saclay</a></li>
-      <li><a href="https://2019.igem.org/Team:GENAS_China/Measurement">2019 GENAS China</a></li>
-      <li><a href="https://2020.igem.org/Team:Calgary/Measurement">2020 Calgary</a></li>
-      <li><a href="https://2020.igem.org/Team:CSMU_Taiwan/Measurement">2020 CSMU Taiwan</a></li>
-    </ul>
-  </div>
-</div>
-
-
-  </div>
+  
 
   <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
-  <footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
+  <footer class="pt-5 pb-5 mt-5">
   <div class="container">
-    <div class="row mb-4">
-      <div class="col-lg-6 col-xs-12">
-        <h4 class="mb-3">Heading</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis</p>
+    <!-- Top Section -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-7 d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3">
+        <div class="d-flex align-items-center gap-2">
+          <img src="../static/img/logo1.svg" alt="IGNITE logo" class="footer-logo">
+        </div>
+        <div class="footer-contact">
+          <p class="mb-1">2026 Zhejiang University</p>
+          <p class="mb-1">ZJU-China</p>
+          <p class="mb-0"><a href="mailto:igemzjuchina@zju.edu.cn">igemzjuchina@zju.edu.cn</a></p>
+        </div>
       </div>
-      <div class="col-lg-3 col-xs-12">
-        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
-          <ul class="m-2 p-2">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Nam mauris velit</a></li>
-            <li><a href="#">Etiam vitae mauris</a></li>
-            <li><a href="#">Fusce scelerisque</a></li>
-            <li><a href="#">Sed faucibus</a></li>
-            <li><a href="#">Mauris efficitur nulla</a></li>
-          </ul>
-      </div>
-      <div class="col-lg-3 col-xs-12">
-        <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
-        <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
-        <p class="mb-0">(541) 754-3010</p>
-        <p>info@hsdf.com</p>
+      <div class="col-lg-5 d-flex justify-content-lg-end justify-content-start gap-4 mt-4 mt-lg-0">
+        <img src="../static/img/zjulogo.svg" alt="Zhejiang University" class="footer-partner-logo">
+        <img src="../static/img/igemlogo.svg" alt="iGEM" class="footer-partner-logo">
       </div>
     </div>
-    <hr>
-    <!-- The following MUST be on every page: license information and link to the repository on gitlab.igem.org -->
+
+    <!-- Bottom Section -->
     <div class="row mt-4">
       <div class="col">
-        <p class="mb-0"><small>© 2026 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
-	      <p><small>The repository used to create this website is available at <a href="github.com/Blanchez66/iGEM2026-WP-Cohort2-Basic">github.com/AnyaReese/iGEM26-WP-Tutorial-Basic</a>.</small></p>
+        <p class="mb-1"><small>© 2026 - iGEM ZJU-China.</small></p>
+        <p class="mb-1"><small>Content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+        <p class="mb-0"><small>The repository used to create this website is available at <a href="https://github.com/Blanchez66/iGEM2026-WP-Cohort2">github.com/Blanchez66/iGEM2026-WP-Cohort2</a>.</small></p>
       </div>
     </div>
   </div>
 </footer>
 
   <!-- Bootstrap Bundle with Popper -->
-  <script src="../static/bootstrap.bundle.min.js"></script>
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="../static/js/toc.js"></script>
 </body>
 </html>

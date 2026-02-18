@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+  
+{% block title %}Project Design{% endblock %}
+{% block lead %}Describe how and why you chose your iGEM project.{% endblock %}
+
+{% block page_content %}
+
+
+<h2>Chassis Selection: Escherichia coli Nissle 1917 (EcN)</h2>
+<p>
+Our project utilizes <em>Escherichia coli</em> Nissle 1917 (EcN) as the core chassis. As a clinically validated probiotic, EcN offers an exemplary safety profile and high human compatibility. Crucially, EcN exhibits innate tumor-tropic motility, autonomously migrating toward the hypoxic and high-lactate tumor microenvironments (TME) characteristic of Small Cell Lung Cancer (SCLC). Since <em>E. coli</em> is a constituent of the native pulmonary microbiota, our engineered EcN is optimized to maintain ecological homeostasis while colonizing the respiratory tract.
+</p>
+
+<h2>Engineering Strategy and Modular Circuits</h2>
+
+<h3>1. Targeted Delivery: Aerosolization & Particle Size Control</h3>
+<p>
+We employ nebulization as the primary administration route. By precisely calibrating the aerodynamic diameter of the aerosol droplets, we can physically control the deposition site of the engineered bacteria within the respiratory tree. This physical positioning ensures that the bacteria reach the deep bronchial or alveolar regions where SCLC resides, minimizing systemic exposure and enhancing local concentration.
+</p>
+
+<h3>2. Pulmonary Retention Module (Bronchial Adhesion)</h3>
+<p>
+Inspired by the specialized attachment mechanisms of <em>Mycoplasma pneumoniae</em>, we engineered EcN to heterologously express the P30 adhesin on its outer membrane. This module enables the bacteria to effectively bind to the bronchial epithelium, overcoming mucociliary clearance and ensuring stable, long-term colonization in the lung.
+</p>
+
+<h3>3. Homeostatic Regulation Module (Quorum Sensing & Negative Feedback)</h3>
+<p>
+To prevent bacterial overgrowth and potential immune overstimulation, we incorporated a negative feedback loop based on Quorum Sensing (QS). When the bacterial density reaches a predefined threshold, the accumulated signaling molecules trigger a suppression circuit that slows down proliferation. This ensures a constant therapeutic dosage and maintains a stable population density within the lung.
+</p>
+
+<h3>4. Precision Targeting Module (DLL3-Modified OMVs)</h3>
+<p>
+The therapeutic engine relies on the secretion of Outer Membrane Vesicles (OMVs). These vesicles are surface-modified with DLL3 nanobodies, which act as "homing devices" to recognize and bind to the Delta-like ligand 3 (DLL3) highly expressed on SCLC cells. This ensures that the therapeutic cargo is concentrated specifically at the tumor site.
+</p>
+
+<h3>5. Stimuli-Responsive Therapeutic Module (MMP-Triggered Peptides)</h3>
+<p>
+The OMVs encapsulate highly potent cytotoxic short peptides. To strictly prevent off-target toxicity, the expression of these peptides is regulated by a Matrix Metalloproteinase (MMP) responsive promoter. The drugs are synthesized and released only in the SCLC microenvironment, where MMP levels are significantly elevated, ensuring high spatial specificity.
+</p>
+
+<h3>6. Biosafety Module (Programmed Suicide Switch)</h3>
+<p>
+In compliance with iGEM's Gold Medal safety standards, we integrated a programmed suicide switch. Utilizing an inducible toxin-antitoxin system (eg, CcdB/CcdA), we can trigger total bacterial elimination upon completion of the treatment or in the event of accidental displacement, ensuring zero environmental leakage and long-term biosafety.
+</p>
+
+<h2>References</h2>
+<ul>
+  <li>Samadi, M., Majidzadeh-A, K., Salehi, M., Jalili, N., Noorinejad, Z., Mosayebzadeh, M., Muhammadnejad, A., Sharif Khatibi, A., Moradi-Kalbolandi, S., & Farahmand, L. (2021). Engineered hypoxia-responding Escherichia coli carrying cardiac peptide genes, suppresses tumor growth, angiogenesis and metastasis in vivo. Journal of biological engineering, 15(1), 20. https://doi.org/10.1186/s13036-021-00269-2</li>
+  <li>Chen, H., Lei, P., Ji, H., Yang, Q., Peng, B., Ma, J., Fang, Y., Qu, L., Li, H., Wu, W., Jin, L., & Sun, D. (2023). Advances in Escherichia coli Nissle 1917 as a customizable drug delivery system for disease treatment and diagnosis strategies. Materials today. Bio, 18, 100543. https://doi.org/10.1016/j.mtbio.2023.100543</li>
+  <li>Janssen K, Claes F, Van de Velde D, Wehbi VL, Houben B, Lampl Y, Nys M, Khodaparast L, Khodaparast L, Louros N, van der Kant R, Verniers J, Garcia T, Ramakers M, Konstantoulea K, Maragkou K, Duran-Romaria R, Musteanu M, Barbacid M, Scameaux B, Beirnaert E, Schymkowitz J, Rousseau F. Exploiting the intrinsic misfolding propensity of the KRAS oncoprotein. Proc Natl Acad Sci U S A. 2023 Feb 28;120(9):e2214921120. doi: 10.1073/pnas.2214921120. Epub 2023 Feb 22. PMID: 36812200; PMCID: PMC9992772.</li>
+  <li>Fernandez-Escamilla AM, Rousseau F, Schymkowitz J, Serrano L. Prediction of sequence-dependent and mutational effects on the aggregation of peptides and proteins. Nat Biotechnol. 2004 Oct;22(10):1302-6. doi: 10.1038/nbt1012. Epub 2004 Sep 12. PMID: 15361882.</li>
+  <li>Rousseau F, Schymkowitz J, Serrano L. Protein aggregation and amyloidosis: confusion of the kinds? Curr Opin Struct Biol. 2006 Feb;16(1):118-26. doi: 10.1016/j.sbi.2006.01.011. Epub 2006 Jan 24. PMID: 16434184.</li>
+  <li>Gentschev, I., et al. (2002). "The E. coli alpha-hemolysin secretion system and its use in vaccine development." Trends in Microbiology.</li>
+  <li>Kanak, B., et al. (2023). "Engineering Escherichia coli Nissle 1917 for the delivery of therapeutic proteins."</li>
+  <li>Yao, X., et al. (2016). "Matrix metalloproteinase-activated 'smart' drug delivery systems: strategies and applications." Progress in Polymer Science.</li>
+  <li>Zhuang WR, Xue WC, Liang C, et al. Bacterial Foreignization Nanosystem Elicits Multi-Phenotypic T Cells for Antitumor Immunity. Adv Sci (Weinh). 2025;12(38):e04155. doi:10.1002/advs.202504155</li>
+  <li>Jurėnas, D.; Fraikin, N.; Goormaghtigh, F.; Van Melderen, L. Biology and Evolution of Bacterial Toxin–Antitoxin Systems. Nat Rev Microbiol 2022, 20 (6), 335–350. https://doi.org/10.1038/s41579-021-00661-1.</li>
+</ul>
+
+{% endblock %}

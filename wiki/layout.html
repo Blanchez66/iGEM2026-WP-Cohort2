@@ -4,43 +4,73 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo2.svg') }}"/>
     <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
 
     <!-- Bootstrap CSS -->
-    <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <title>{% block title %}{% endblock %} | ZJU-China - iGEM 2023</title>
+    <title>{% block title %}{% endblock %} | iGEM Winter Project</title>
 
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#toc-sidebar" data-bs-offset="100">
   <!-- Navigation -->
   {% include 'menu.html' %}
 
   <!-- Header -->
-  <header class="bg-hero py-5 mb-5">
+  {% block header %}
+  <header class="py-5 mb-5" style="background-color: #f7f7f5;">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2">{{ self.title() }}</h1>
-	        <p class="lead mb-5 text-white-50">{% block lead %}{% endblock %}</p>
+          <h1 class="display-4 mt-5 mb-2">{{ self.title() }}</h1>
+	        <p class="lead mb-5">{% block lead %}{% endblock %}</p>
         </div>
       </div>
     </div>
   </header>
+  {% endblock %}
 
   <!-- Page Content -->
+  {% block page_container %}
   <div class="container">
-    {% block page_content %}{% endblock %}
+    <div class="row">
+      {% if request.path != url_for('home') %}
+        <!-- Sidebar -->
+        <div class="col-lg-3">
+          <nav id="toc-sidebar" class="sticky-top vh-100 overflow-auto pe-3">
+            <h5>On this page</h5>
+            <ul class="nav nav-pills flex-column"></ul>
+          </nav>
+        </div>
+      {% endif %}
+      <!-- Main Content -->
+      <div id="main-content" class="{% if request.path != url_for('home') %}col-lg-9{% else %}col-lg-12{% endif %}">
+        {% block page_content %}{% endblock %}
+      </div>
+    </div>
   </div>
+  {% endblock %}
 
   <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
   {% include 'footer.html' %}
 
   <!-- Bootstrap Bundle with Popper -->
-  <script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+  <!-- Custom Scripts -->
+  <script src="{{ url_for('static', filename='js/toc.js') }}"></script>
 </body>
 </html>

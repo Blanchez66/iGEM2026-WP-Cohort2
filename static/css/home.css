@@ -1,0 +1,232 @@
+    @font-face {
+        font-family: 'Idiqlat';
+        src: url("../fonts/Idiqlat-Light.ttf") format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .home-section {
+        padding: 60px 0;
+    }
+    .section-title {
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .hero-illustration {
+        max-width: 280px;
+        height: auto;
+    }
+    .hero-description {
+        font-size: 1rem;
+        color: #555;
+    }
+    .problem-quote {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    .problem-quote svg, .quote-icon {
+        width: 40px;
+        height: 40px;
+        color: #333;
+    }
+    /* 标题外层容器，inline-block 确保它紧贴文字宽度，方便双引号定位 */
+    .problem-heading-wrapper {
+        position: relative;
+        display: inline-block; 
+        margin-bottom: 40px;
+        /* 父级容器 container 默认是左对齐的，所以这里无需额外写 text-align: left */
+    }
+
+    /* 中间的 THE PROBLEM 文字 */
+    .problem-text {
+        font-family: 'Idiqlat', sans-serif;
+        color: #527379;
+        font-size: 3rem; 
+        font-weight: bold;
+        margin: 0;
+        /* 左右留出 padding 给绝对定位的双引号腾出空间 */
+        padding: 10px 35px; 
+        line-height: 1.2;
+    }
+
+    /* 双引号的基础样式 */
+    .problem-quote-mark {
+        font-family: 'Idiqlat', sans-serif;
+        color: #000000; /* 黑色 */
+        font-size: 4rem; /* 稍微比文字大一点，视觉冲击力更强 */
+        position: absolute;
+        line-height: 1;
+    }
+
+    /* 左上角双引号定位 */
+    .quote-top-left {
+        top: -10px;
+        left: 0;
+    }
+
+    /* 右下角双引号定位 */
+    .quote-bottom-right {
+        top: 60px;
+        right: -10px;
+    }
+    .btn-orange {
+        background-color: #f8c38a;
+        color: #333;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 24px;
+    }
+    .btn-orange:hover {
+        background-color: #f0ad4e;
+        color: #fff;
+    }
+    .btn-blue {
+        background-color: #dee9f5;
+        color: #333;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 24px;
+    }
+    .btn-blue:hover {
+        background-color: #bad1e2;
+        color: #333;
+    }
+    .sclc-label {
+        background-color: #f0a060;
+        color: #fff;
+        padding: 12px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        display: inline-block;
+    }
+    .nsclc-label {
+        background-color: #b8d4e8;
+        color: #fff;
+        padding: 12px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        display: inline-block;
+    }
+    .limitation-svg {
+        width: 360px; 
+        height: 360px; 
+        margin: 0 auto;
+        display: block;
+        object-fit: contain;
+        
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .limitation-svg:hover {
+        transform: translateY(-10px) scale(1.08) rotate(4deg);
+        
+        filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.15));
+    }
+    .brainstorm-section {
+        position: relative;
+    }
+    .brainstorm-center {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .brainstorm-icon {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 15px;
+    }
+    .brainstorm-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+        .brainstorm-grid { grid-template-columns: 1fr; }
+    }
+    .brainstorm-card {
+        text-align: center;
+        padding: 20px;
+    }
+    .brainstorm-card .brainstorm-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .home-bottom-white {
+        background: #fff;
+        padding-bottom: 60px;
+    }
+    .solution-section {
+        background: #fff;
+        padding: 0 0 40px 0;
+    }
+    .solution-banner {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+    .solution-content {
+        padding-top: 40px;
+    }
+    .solution-box {
+        background-color: #dee9f5;
+        border-radius: 12px;
+        padding: 12px 20px;
+        display: inline-block;
+    }
+    .solution-img {
+        max-width: 220px;
+    }
+    .solution-step-title {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 12px;
+    }
+    .solution-boom {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #f0a060;
+        font-style: italic;
+        display: block;
+    }
+    .solution-step {
+        margin-bottom: 40px;
+    }
+    .footer-sitemap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+    }
+    .footer-sitemap-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #333;
+    }
+    .footer-sitemap-item:hover { color: #527379; }
+    .footer-sitemap-item svg, .sitemap-icon {
+        width: 32px;
+        height: 32px;
+    }
+    .video-section {
+        background-color: #dee9f5;
+        padding: 60px 0;
+    }
+    .video-placeholder {
+        background: #fff;
+        border-radius: 12px;
+        aspect-ratio: 16/9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }

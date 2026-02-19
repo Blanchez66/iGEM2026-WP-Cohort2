@@ -6,11 +6,11 @@
 body { 
     padding-top: 56px;
     font-family: 'Open Sans', sans-serif;
-    background-color: #fcfbf9;
+    background-color: #ffffff;
 }
 .left-aligned { margin-left: auto; }
 .bg-dark { background-color: #fcfbf9 !important; }
-.bg-hero { background-color: #45b06cff; }
+.bg-hero { background-color: #fcfbf9; }
 
 .navbar-brand {
     display: flex;
@@ -211,6 +211,28 @@ footer a:hover { color: #527379; text-decoration: underline; }
     }
 }
 
+#home-main-content {
+    scroll-margin-top: 30px; 
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+/* 给除了主页以外的其他子页面正文设置 Lora 字体 */
+#main-content {
+    font-family: 'Lora', serif;
+    font-size: 1.05rem; /* 可选：Lora 字体有时视觉上偏小，可以稍微放大一点增加阅读舒适度 */
+    line-height: 1.7;   /* 可选：增加行高，让长文排版更透气 */
+}
+
+/* 确保子页面正文里的标题也继承 Lora 字体（如果需要的话） */
+#main-content h1, 
+#main-content h2, 
+#main-content h3, 
+#main-content h4, 
+#main-content h5, 
+#main-content h6 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
 }

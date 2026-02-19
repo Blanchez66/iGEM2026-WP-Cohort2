@@ -15,7 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <!-- Custom CSS -->
     <link href="static/css/style.css" rel="stylesheet">
     
@@ -23,6 +24,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <title>Home | iGEM Winter Project</title>
+    
+    
+<link href="static/css/home.css" rel="stylesheet">
 
 </head>
 <body data-bs-spy="scroll" data-bs-target="#toc-sidebar" data-bs-offset="100">
@@ -137,193 +141,14 @@
   
 <div id="home-main-content">
 
-<style>
-    .home-section {
-        padding: 60px 0;
-    }
-    .section-title {
-        font-weight: bold;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-    .hero-illustration {
-        max-width: 280px;
-        height: auto;
-    }
-    .hero-description {
-        font-size: 1rem;
-        color: #555;
-    }
-    .problem-quote {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 30px;
-    }
-    .problem-quote svg, .quote-icon {
-        width: 40px;
-        height: 40px;
-        color: #333;
-    }
-    .btn-orange {
-        background-color: #f8c38a;
-        color: #333;
-        border: none;
-        border-radius: 8px;
-        padding: 10px 24px;
-    }
-    .btn-orange:hover {
-        background-color: #f0ad4e;
-        color: #fff;
-    }
-    .btn-blue {
-        background-color: #dee9f5;
-        color: #333;
-        border: none;
-        border-radius: 8px;
-        padding: 10px 24px;
-    }
-    .btn-blue:hover {
-        background-color: #bad1e2;
-        color: #333;
-    }
-    .sclc-label {
-        background-color: #f0a060;
-        color: #fff;
-        padding: 12px 32px;
-        border-radius: 8px;
-        font-weight: 600;
-        display: inline-block;
-    }
-    .nsclc-label {
-        background-color: #b8d4e8;
-        color: #fff;
-        padding: 12px 32px;
-        border-radius: 8px;
-        font-weight: 600;
-        display: inline-block;
-    }
-    .limitation-svg {
-        width: 140px;
-        height: 140px;
-        margin: 0 auto;
-        display: block;
-        object-fit: contain;
-    }
-    .brainstorm-section {
-        position: relative;
-    }
-    .brainstorm-center {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    .brainstorm-icon {
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 15px;
-    }
-    .brainstorm-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-    @media (max-width: 768px) {
-        .brainstorm-grid { grid-template-columns: 1fr; }
-    }
-    .brainstorm-card {
-        text-align: center;
-        padding: 20px;
-    }
-    .brainstorm-card .brainstorm-icon {
-        width: 80px;
-        height: 80px;
-    }
-    .home-bottom-white {
-        background: #fff;
-        padding-bottom: 60px;
-    }
-    .solution-section {
-        background: #fff;
-        padding: 0 0 40px 0;
-    }
-    .solution-banner {
-        width: 100%;
-        max-width: 100%;
-        display: block;
-        margin: 0 auto;
-    }
-    .solution-content {
-        padding-top: 40px;
-    }
-    .solution-box {
-        background-color: #dee9f5;
-        border-radius: 12px;
-        padding: 12px 20px;
-        display: inline-block;
-    }
-    .solution-img {
-        max-width: 220px;
-    }
-    .solution-step-title {
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 12px;
-    }
-    .solution-boom {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #f0a060;
-        font-style: italic;
-        display: block;
-    }
-    .solution-step {
-        margin-bottom: 40px;
-    }
-    .footer-sitemap {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 30px;
-    }
-    .footer-sitemap-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-        color: #333;
-    }
-    .footer-sitemap-item:hover { color: #527379; }
-    .footer-sitemap-item svg, .sitemap-icon {
-        width: 32px;
-        height: 32px;
-    }
-    .video-section {
-        background-color: #dee9f5;
-        padding: 60px 0;
-    }
-    .video-placeholder {
-        background: #fff;
-        border-radius: 12px;
-        aspect-ratio: 16/9;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-</style>
 
 <!-- THE PROBLEM Section -->
-<section class="home-section">
+<section class="home-section" style="background-color: #fcfbf9;">
     <div class="container">
-        <div class="problem-quote">
-            <i class="fas fa-quote-left quote-icon"></i>
-            <h2 class="section-title mb-0" style="font-size: 2.5rem;">THE PROBLEM</h2>
-            <i class="fas fa-quote-right quote-icon"></i>
+        <div class="problem-heading-wrapper">
+            <span class="problem-quote-mark quote-top-left">“</span>
+            <h2 class="problem-text">THE PROBLEM</h2>
+            <span class="problem-quote-mark quote-bottom-right">”</span>
         </div>
 
         <!-- Intro text -->
@@ -374,7 +199,7 @@
 </section>
 
 <!-- Why SCLC? Section -->
-<section class="home-section">
+<section class="home-section" style="background-color: #fcfbf9;">
     <div class="container">
         <h2 class="section-title text-start mb-4" style="font-size: 1.8rem; color: #527379;">Why SCLC?</h2>
         <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
@@ -389,30 +214,33 @@
             <p class="mb-0 fw-bold" style="font-size: 1.1rem; color: #527379;">Current treatments for SCLC have obvious limitations:</p>
             <i class="fas fa-quote-right quote-icon"></i>
         </div>
+    </div>
+</section>
 
-        <!-- Three limitation blocks -->
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="limitation-block text-center">
-                    <img src="static/img/home/current%20treatment3.svg" alt="Difficult to Diagnose & Cure" class="limitation-svg">
-                    <p class="mt-3 mb-0 small">Second-line therapies, including small-molecule targeted drugs and bispecific T-cell engagers, also have limited efficacy.</p>
-                </div>
+<!-- Three limitation blocks -->
+<section class="home-section" style="background-color: #ffffff;">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="limitation-block text-center">
+                <img src="static/img/home/current%20treatment3.svg" alt="Difficult to Diagnose & Cure" class="limitation-svg">
+                <p class="mt-3 mb-0 small">Second-line therapies, including small-molecule targeted drugs and bispecific T-cell engagers, also have limited efficacy.</p>
             </div>
-            <div class="col-md-4">
-                <div class="limitation-block text-center">
-                    <img src="static/img/home/current%20treatment2.svg" alt="Temporary Response" class="limitation-svg">
-                    <p class="mt-3 mb-0 small">The mainstream treatment combines chemotherapy with immunotherapy, which has a certain initial tumor shrinkage effect but unsustainable results, accompanied by prominent drug resistance and high recurrence rate.</p>
-                </div>
+        </div>
+        <div class="col-md-4">
+            <div class="limitation-block text-center">
+                <img src="static/img/home/current%20treatment2.svg" alt="Temporary Response" class="limitation-svg">
+                <p class="mt-3 mb-0 small">The mainstream treatment combines chemotherapy with immunotherapy, which has a certain initial tumor shrinkage effect but unsustainable results, accompanied by prominent drug resistance and high recurrence rate.</p>
             </div>
-            <div class="col-md-4">
-                <div class="limitation-block text-center">
-                    <img src="static/img/home/current%20treatment3.svg" alt="Difficult to Diagnose & Cure" class="limitation-svg">
-                    <p class="mt-3 mb-0 small">Additionally, SCLC is hard to screen early due to its aggressive progression and early metastasis; limited clinical biomarkers further trap its treatment in a dilemma of "difficult diagnosis, difficult cure, high recurrence rate, and high cost".</p>
-                </div>
+        </div>
+        <div class="col-md-4">
+            <div class="limitation-block text-center">
+                <img src="static/img/home/current%20treatment3.svg" alt="Difficult to Diagnose & Cure" class="limitation-svg">
+                <p class="mt-3 mb-0 small">Additionally, SCLC is hard to screen early due to its aggressive progression and early metastasis; limited clinical biomarkers further trap its treatment in a dilemma of "difficult diagnosis, difficult cure, high recurrence rate, and high cost".</p>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Our solution Section (white bg from here to footer) -->
 <div class="home-bottom-white">
@@ -450,7 +278,6 @@
                 <p class="mt-2 mb-0">The peptide enters cancer cells, triggering MYC assembly ("BOOM!"), which leads to targeted cancer cell death and tumor regression.</p>
             </div>
             <div class="col-md-6 text-center">
-                <span class="solution-boom">BOOM!</span>
                 <img src="static/img/home/solution%20fig3.svg" alt="Action" class="img-fluid solution-img d-block mt-2 mx-auto">
             </div>
         </div>

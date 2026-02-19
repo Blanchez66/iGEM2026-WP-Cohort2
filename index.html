@@ -16,9 +16,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    
+
     <!-- Custom CSS -->
     <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/home.css" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -128,9 +129,10 @@
 <header class="hero-section vh-100 d-flex flex-column justify-content-center align-items-center text-center">
     <div class="hero-content">
         <p class="hero-subtitle mb-5">Induced a Gathering for Neoplastic Inhibition and Tumor Eradication</p>
-        <h1 class="hero-title mb-4">IGNITE</h1>
-        <a href="#home-main-content" class="btn btn-outline-secondary mt-4">Ready to Know Who We Are</a>
-    </div>
+        <h1 class="hero-title mb-3">IGNITE</h1>
+        </div>
+
+    <a href="#home-main-content" class="btn btn-hero hero-btn-bottom">Ready to Know Who We Are</a>
     <a href="#home-main-content" class="scroll-down-arrow">
         <i class="fas fa-chevron-down"></i>
     </a>
@@ -159,12 +161,12 @@
         <!-- Lifetime cancer incidence risk -->
         <div class="row align-items-center mb-5">
             <div class="col-md-5 text-center mb-4 mb-md-0">
-                <img src="static/img/home/fig1.svg" alt="Lifetime cancer incidence risk" class="img-fluid" style="max-width: 260px;">
+                <img src="static/img/home/fig1.svg" alt="Lifetime cancer incidence risk" class="img-fluid" style="max-width: 330px;">
             </div>
             <div class="col-md-7">
                 <p>
-                    China's lifetime cancer incidence risk is about <strong>27.6%</strong>.<br>
-                    The global lifetime cancer incidence risk is about <strong>25.1%</strong>, meaning that roughly one in four people will face a cancer threat in their lifetime.
+                    China's lifetime cancer incidence risk is about <strong class="highlight-number"><span class="counter-num" data-target="27.6">0</span>%</strong>.<br>
+                    The global lifetime cancer incidence risk is about <strong class="highlight-number"><span class="counter-num" data-target="25.1">0</span>%</strong>, meaning that roughly one in four people will face a cancer threat in their lifetime.
                 </p>
             </div>
         </div>
@@ -173,19 +175,19 @@
         <div class="row align-items-center mb-5">
             <div class="col-md-7 order-2 order-md-1">
                 <p>
-                    China's point prevalence rate is about <strong>0.34%</strong>, while the global point prevalence rate is about <strong>0.67%</strong>, 
+                    China's point prevalence rate is about <strong class="highlight-number"><span class="counter-num" data-target="0.34">0</span>%</strong>, while the global point prevalence rate is about <strong class="highlight-number"><span class="counter-num" data-target="0.67">0</span>%</strong>, 
                     highlighting the urgent demand in cancer treatment.
                 </p>
             </div>
             <div class="col-md-5 text-center order-1 order-md-2 mb-4 mb-md-0">
-                <img src="static/img/home/fig2.svg" alt="Cancer point prevalence rate" class="img-fluid" style="max-width: 260px;">
+                <img src="static/img/home/fig2.svg" alt="Cancer point prevalence rate" class="img-fluid" style="max-width: 330px;">
             </div>
         </div>
 
         <!-- Lung cancer description -->
         <div class="row align-items-center">
             <div class="col-md-5 text-center mb-4 mb-md-0">
-                <img src="static/img/home/fig3%E8%82%BA.svg" alt="Lung illustration" class="img-fluid" style="max-width: 260px;">
+                <img src="static/img/home/fig3%E8%82%BA.svg" alt="Lung illustration" class="img-fluid" style="max-width: 300px;">
             </div>
             <div class="col-md-7">
                 <p>
@@ -201,24 +203,36 @@
 <!-- Why SCLC? Section -->
 <section class="home-section" style="background-color: #fcfbf9;">
     <div class="container">
-        <h2 class="section-title text-start mb-4" style="font-size: 1.8rem; color: #527379;">Why SCLC?</h2>
-        <div class="d-flex justify-content-center gap-4 flex-wrap mb-4">
-            <span class="sclc-label">SCLC</span>
+        <div class="text-end">
+            <div class="problem-heading-wrapper align-right-mode">
+                <span class="problem-quote-mark quote-top-left">“</span>
+                <h2 class="problem-text">Why SCLC?</h2>
+                <span class="problem-quote-mark quote-bottom-right">”</span>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center gap-4 flex-wrap mb-4" >
+            <span class="sclc-label">SCLC  </span>
             <span class="nsclc-label">NSCLC</span>
         </div>
         <p class="text-center mb-4" style="max-width: 720px; margin-left: auto; margin-right: auto;">
             Compared with NSCLC, SCLC has almost no effective targeted therapies and few reliable biomarkers, making it a top priority for innovative therapeutic strategies.
         </p>
-        <div class="problem-quote mb-5">
-            <i class="fas fa-quote-left quote-icon"></i>
-            <p class="mb-0 fw-bold" style="font-size: 1.1rem; color: #527379;">Current treatments for SCLC have obvious limitations:</p>
-            <i class="fas fa-quote-right quote-icon"></i>
-        </div>
     </div>
 </section>
 
 <!-- Three limitation blocks -->
 <section class="home-section" style="background-color: #ffffff;">
+    <div class="text-center mb-5 mt-4">
+        <div class="problem-heading-wrapper" style="padding: 0 30px; margin-bottom: 0;">
+            <span class="problem-quote-mark quote-top-left" style="top: -10px; left: -10px;">“</span>
+            
+            <span class="fw-bold" style="font-family: 'Playfair Display', serif; font-size: 2.25rem; color: #527379;">
+                Current treatments for SCLC have obvious limitations: 
+            </span>
+            
+            <span class="problem-quote-mark quote-bottom-right" style="top: auto; bottom: -75px; right: -20px;">”</span>
+        </div>
+    </div>
     <div class="row g-4">
         <div class="col-md-4">
             <div class="limitation-block text-center">
@@ -285,8 +299,10 @@
 </section>
 </div>
 
+<script src="static/javascript/number.js"></script>
 
 </div>
+
 
 
   <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
@@ -315,16 +331,16 @@
       <div class="col">
         <p class="mb-1"><small>© 2026 - iGEM ZJU-China.</small></p>
         <p class="mb-1"><small>Content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
-        <p class="mb-0"><small>The repository used to create this website is available at <a href="https://github.com/Blanchez66/iGEM2026-WP-Cohort2">github.com/Blanchez66/iGEM2026-WP-Cohort2</a>.</small></p>
+        <p class="mb-1"><small>The repository used to create this website is available at <a href="https://github.com/Blanchez66/iGEM2026-WP-Cohort2">github.com/Blanchez66/iGEM2026-WP-Cohort2</a>.</small></p>
       </div>
     </div>
   </div>
 </footer>
 
   <!-- Bootstrap Bundle with Popper -->
-  <script src="static/js/bootstrap.bundle.min.js"></script>
+  <script src="static/javascript/bootstrap.bundle.min.js"></script>
 
   <!-- Custom Scripts -->
-  <script src="static/js/toc.js"></script>
+  <script src="static/javascript/toc.js"></script>
 </body>
 </html>

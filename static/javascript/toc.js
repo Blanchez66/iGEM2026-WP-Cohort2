@@ -1,39 +1,58 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const tocSidebar = document.querySelector('#toc-sidebar ul');
-    const mainContent = document.getElementById('main-content');
-
-    if (!tocSidebar || !mainContent) {
-        return; // Exit if sidebar or main content not found
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    const tocContainer = document.querySelector('#toc-sidebar ul');
+    const mainContent = document.querySelector('#main-content');
+    if (!tocContainer || !mainContent) return;
 
     const headings = mainContent.querySelectorAll('h2, h3');
-    if (headings.length === 0) {
-        const tocContainer = document.getElementById('toc-sidebar');
-        if(tocContainer) tocContainer.style.display = 'none';
-        return; // Hide sidebar if no headings
-    }
+    let currentH2Item = null;
+    let currentH2List = null;
 
     headings.forEach((heading, index) => {
-        // Ensure heading has an ID for linking
-        if (!heading.id) {
-            // Create a simple, unique ID
-            heading.id = `toc-heading-${index}`;
-        }
+        const id = heading.id || `heading-${index}`;
+        heading.id = id;
 
-        // Create list item and link
-        const listItem = document.createElement('li');
-        const link = document.createElement('a');
+        const li = document.createElement('li');
+        li.className = 'nav-item';
         
-        link.setAttribute('href', `#${heading.id}`);
-        link.textContent = heading.textContent;
-        link.classList.add('nav-link');
+        const a = document.createElement('a');
+        a.className = 'nav-link';
+        a.href = `#${id}`;
+        a.textContent = heading.textContent.replace('▼', '').trim(); // 清理可能的箭头字符
 
-        // Indent H3 titles
-        if (heading.tagName === 'H3') {
-            link.classList.add('ms-3');
+        if (heading.tagName === 'H2') {
+            li.appendChild(a);
+            
+            // 为 H2 创建一个专门放子 H3 的容器
+            currentH2List = document.createElement('ul');
+            currentH2List.className = 'nav flex-column'; 
+            li.appendChild(currentH2List);
+            
+            tocContainer.appendChild(li);
+            currentH2Item = li;
+        } else if (heading.tagName === 'H3' && currentH2List) {
+            li.appendChild(a);
+            currentH2List.appendChild(li);
         }
+    });
 
-        listItem.appendChild(link);
-        tocSidebar.appendChild(listItem);
+    // 监听 Bootstrap 的 ScrollSpy 激活事件
+    window.addEventListener('activate.bs.scrollspy', (e) => {
+        const activeLink = document.querySelector('#toc-sidebar .nav-link.active');
+        if (!activeLink) return;
+
+        // 找到当前激活链接所属的最高级 H2 项目
+        const parentLi = activeLink.closest('#toc-sidebar > .nav > .nav-item');
+        
+        // 收起所有其他的 H3 列表
+        document.querySelectorAll('#toc-sidebar > .nav > .nav-item').forEach(item => {
+            const subNav = item.querySelector('.nav');
+            if (subNav) {
+                if (item === parentLi) {
+                    subNav.style.display = 'block';
+                } else {
+                    subNav.style.display = 'none';
+                }
+            }
+        });
     });
 });

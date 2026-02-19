@@ -114,6 +114,7 @@
     animation: bounce 2.5s infinite;
     transition: color 0.3s ease;
 }
+
 .scroll-down-arrow:hover {
     color: #527379 !important;
 }
@@ -130,8 +131,8 @@
     }
 }
 
-#home-main-content {
-    scroll-margin-top: 40px; 
+#TheProblem {
+    scroll-margin-top: 56px; 
 }
 
 html {
@@ -206,7 +207,7 @@ html {
 
 .home-section p {
     font-family: 'Playfair Display', serif;
-    font-size: 1.85rem; /* 这里是控制字号大小的属性 */
+    font-size: 1.6rem; /* 这里是控制字号大小的属性 */
     line-height: 1.6; /* 稍微增加行高，让大段文字读起来更舒服 */
 }
 
@@ -345,7 +346,7 @@ html {
     display: block;
     object-fit: contain;
     /* 这里的 transition 确保了 hover 时的动画平滑 */
-    transition: transform 0.3s ease, filter 0.3s ease; 
+    transition: transform 0.2s ease, filter 0.2s ease; 
 }
 
 /* 位移、放大、旋转、阴影 */
@@ -357,7 +358,7 @@ html {
 /* --- 正文文字样式 --- */
 .treatment-desc {
     font-family: 'Playfair Display', serif;
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     line-height: 1.6;
     color: #333;
     max-width: 80%; /* 限制文字宽度，使其在 360px 图片下方更美观 */
@@ -399,7 +400,7 @@ html {
 .solution-content {
     padding-top: 40px;
     font-family: 'Playfair Display', serif;
-    font-size: 2.0rem;
+    font-size: 1.6rem;
     line-height: 1.6;
 }
 .solution-box {
@@ -407,9 +408,6 @@ html {
     border-radius: 12px;
     padding: 12px 20px;
     display: inline-block;
-}
-.solution-img {
-    max-width: 220px;
 }
 .solution-step-title {
     font-weight: 600;
@@ -511,11 +509,15 @@ html {
     }
 }
 
-#scroll-fly-img {
-    /* 让 JS 控制的位移带有 0.1秒 的缓冲，看起来就像有惯性一样丝滑 */
-    transition: transform 0.1s ease-out;
-    /* 保证它在没有任何 JS 干预时的初始状态就是原始大小和位置 */
-    transform: translate(0, 0); 
+
+
+.hover-zoom {
+    transition: transform 0.3s ease; /* 0.3秒平滑放大 */
+}
+
+.hover-zoom:hover {
+    transform: scale(1.08); /* 放大到 1.08 倍，按需修改数值 */
+    cursor: pointer;
 }
 
 /* 专门控制 HOPE 区块的样式 */
@@ -545,4 +547,19 @@ html {
     .hope-img-wrapper img {
         max-width: 80%; /* 手机上占宽度的80% */
     }
+
+}
+/* 定义摇摆关键帧 */
+@keyframes sway {
+    0% { transform: rotate(-3deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+.sway-animation {
+    transform-origin: center center; /* 确保是沿着图片正中心摇摆 */
+    animation: sway 12s ease-in-out infinite; /* 动画总长4秒，无限循环 */
+
 }

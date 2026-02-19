@@ -44,7 +44,11 @@
             <div class="col-md-7">
                 <p>
                     China's lifetime cancer incidence risk is about <strong class="highlight-number"><span class="counter-num" data-target="27.6">0</span>%</strong>.<br>
-                    The global lifetime cancer incidence risk is about <strong class="highlight-number"><span class="counter-num" data-target="25.1">0</span>%</strong>, meaning that roughly one in four people will face a cancer threat in their lifetime.
+                    The global lifetime cancer incidence risk is about <strong class="highlight-number"><span class="counter-num" data-target="25.1">0</span>%</strong>,
+                </p>
+
+                <p>
+                    meaning that roughly one in four people will face a cancer threat in their lifetime.
                 </p>
             </div>
         </div>
@@ -156,7 +160,7 @@
 
         <div class="row align-items-center solution-step">
             <div class="col-md-6 text-center order-2 order-md-1 solution-img-box img-box-2">
-                <img src="{{ url_for('static', filename='img/home/solution fig2.svg') }}" alt="Secretion" class="img-fluid solution-img" id="scroll-fly-img">
+                <img src="{{ url_for('static', filename='img/home/solution fig2.svg') }}" alt="Secretion" class="img-fluid solution-img ">
             </div>
             <div class="col-md-6 order-1 order-md-2 solution-text-box text-box-2">
                 <div class="solution-box"><h4 class="solution-step-title mb-0" style="font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 2rem;">Secretion</h4></div>
@@ -170,7 +174,7 @@
                 <p class="mt-2 mb-0">The peptide enters cancer cells, triggering MYC assembly ("BOOM!"), which leads to targeted cancer cell death and tumor regression.</p>
             </div>
             <div class="col-md-6 text-center solution-img-box img-box-3">
-                <img src="{{ url_for('static', filename='img/home/solution fig3.svg') }}" alt="Action" class="img-fluid solution-img d-block mt-2 mx-auto">
+                <img src="{{ url_for('static', filename='img/home/solution fig3.svg') }}" alt="Action" class="hover-zoom img-fluid solution-img d-block mt-2 mx-auto">
             </div>
         </div>
     </div>
@@ -191,13 +195,14 @@
         </div>
 
         <div class="hope-img-wrapper mt-4">
-            <img src="{{ url_for('static', filename='img/home/HOPE.svg') }}" alt="HOPE" class="img-fluid" style="max-width: 600px;">
+            <img src="{{ url_for('static', filename='img/home/HOPE.svg') }}" alt="HOPE" class="img-fluid sway-animation" style="max-width: 600px;">
         </div>
 
     </div>
 </section>
 
 <script src="{{ url_for('static', filename='javascript/number.js') }}"></script>
+
 
 
 {% endblock %}

@@ -6,7 +6,7 @@
 
 body { 
     padding-top: 56px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Questrial', sans-serif;
     background-color: #ffffff;
 }
 /* 设置根元素的字体大小动态随窗口变化 */
@@ -87,15 +87,43 @@ body {
     border-bottom-right-radius: 8px;
 }
 
-/* CALLOUT */
-.bd-callout { padding:1.25rem; margin-top:1.25rem; margin-bottom:1.25rem; border:1px solid #e9ecef; border-left-width:.25rem; border-radius:.25rem }
-.bd-callout h4 { margin-bottom:.25rem }
-.bd-callout p:last-child { margin-bottom:0 }
-.bd-callout code { border-radius:.25rem }
-.bd-callout+.bd-callout { margin-top:-.25rem }
-.bd-callout-info { border-left-color:#5bc0de }
-.bd-callout-warning { border-left-color:#f0ad4e }
-.bd-callout-danger { border-left-color:#d9534f }
+/* 进度条外层容器：固定在视口顶部 */
+#scroll-progress-container {
+    position: fixed;
+    /* 这里的 top 值需要根据你导航栏的实际高度调整 */
+    /* 如果导航栏高度是 56px，这里就写 56px */
+    top: 69px; 
+    left: 0;
+    width: 100%;
+    height: 4px; /* 进度条粗细 */
+    background: rgba(255, 255, 255, 0.2); /* 进度条底槽颜色 */
+    z-index: 1050; /* 确保在导航栏层级附近，且高于正文 */
+    pointer-events: none; /* 确保点击进度条不会影响下方的按钮 */
+}
+
+/* 进度条本体 */
+#progress-bar {
+    height: 100%;
+    width: 0%; 
+    background: #F0AD4E; /* 你的主题色 */
+    position: relative;
+    transition: width 0.1s linear; /* 使用 linear 让滚动更平滑 */
+}
+
+/* 进度条头部的 Logo */
+#progress-logo {
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    /* 初始状态：垂直居中 + 旋转0度 */
+    transform: translateY(-50%) rotate(0deg); 
+    width: 30px;
+    height: 30px;
+    z-index: 1051;
+    /* 增加旋转的平滑感 */
+    transition: transform 0.1s linear; 
+}
+
 
 /* footer */
 footer {
@@ -152,6 +180,7 @@ footer a:hover { color: #527379; text-decoration: underline; }
 }
 
 #toc-sidebar h5 {
+    font-family: 'Questrial', sans-serif;
     font-weight: bold;
     color: #333;
     margin-top: 1rem;
@@ -175,6 +204,19 @@ footer a:hover { color: #527379; text-decoration: underline; }
     font-weight: bold;
 }
 
+/* 默认隐藏所有 h3 的列表容器 */
+#toc-sidebar .nav .nav {
+    display: none;
+    padding-left: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* 当父级 h2 的 <li> 处于激活状态时，显示其直接子级 <ul> (即 h3 列表) */
+#toc-sidebar .nav-item.active > .nav,
+#toc-sidebar .nav-link.active + .nav {
+    display: block;
+}
+
 /* 给除了主页以外的其他子页面正文设置 Lora 字体 */
 #main-content {
     font-family: 'Lora', serif;
@@ -191,4 +233,19 @@ footer a:hover { color: #527379; text-decoration: underline; }
 #main-content h6 {
     font-family: 'Lora', serif;
     font-weight: 700;
+    scroll-margin-top: 80px;
+
+}
+h2{
+    margin-bottom: 20px;
+}
+/* 标题悬停效果 */
+h2:hover {
+    color: #527379; /* 你的主题色 */
+}
+
+.collapse-wrapper {
+    padding-left: 15px;
+    margin-bottom: 20px;
+    
 }

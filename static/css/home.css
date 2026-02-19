@@ -161,6 +161,8 @@ html {
     font-size: 1rem;
     color: #555;
 }
+
+/* <!-- THE PROBLEM Section --> */
 /* 标题外层容器，inline-block 确保它紧贴文字宽度，方便双引号定位 */
 .problem-heading-wrapper {
     position: relative;
@@ -207,6 +209,8 @@ html {
     font-size: 1.85rem; /* 这里是控制字号大小的属性 */
     line-height: 1.6; /* 稍微增加行高，让大段文字读起来更舒服 */
 }
+
+/* <!-- Why SCLC? Section --> */
 
 /* Why SCLC 靠右且单引号样式 */
 
@@ -275,19 +279,19 @@ html {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 1.5rem; 
     
-    /* --- 新增：固定大小与居中 --- */
+    /* --- 固定大小与居中 --- */
     width: 160px; /* 统一的宽度，如果觉得不够宽可以改成 180px 等 */
     text-align: center; /* 确保文字在方块内居中 */
     
-    /* --- 新增：动画过渡与鼠标手势 --- */
+    /* --- 动画过渡与鼠标手势 --- */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* 让放大过程平滑 */
-    cursor: default; /* 如果你想让鼠标放上去变成小手，可以把 default 改成 pointer */
+    cursor: pointer;
 }
 
 /* SCLC 鼠标悬停(hover)的效果 */
 .sclc-label:hover {
     transform: scale(1.1); /* 放大 1.1 倍 */
-    box-shadow: 0 8px 15px rgba(240, 160, 96, 0.4); /* (可选) 增加一点同色系的阴影，让它看起来更立体 */
+    box-shadow: 0 8px 15px rgba(240, 160, 96, 0.4); /* 增加一点同色系的阴影，让它看起来更立体 */
 }
 
 .nsclc-label {
@@ -304,7 +308,7 @@ html {
     text-align: center; 
     
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default; 
+    cursor: pointer; 
 }
 
 .nsclc-label:hover {
@@ -312,53 +316,76 @@ html {
     box-shadow: 0 8px 15px rgba(184, 212, 232, 0.4); /* (可选) 增加一点同色系阴影 */
 }
 
-.limitation-svg {
+/* <!-- Current Treatment blocks --> */
+
+/* 容器宽度与间距控制 --- */
+.treatment-container {
+    max-width: 1200px;  /* 调整此数值可改变正文部分的整体宽度 */
+    padding: 0 60px;    /* 增加屏幕两侧的大小，数值越大，两侧留白越多 */
+    margin: 0 auto;
+    padding-bottom: 300px !important; /* 数值越大，距离越远 */
+}
+
+/* 错位布局效果 --- */
+.treatment-center-block {
+    transform: translateY(0); /* 中间最高 */
+    z-index: 2;
+}
+
+.treatment-side-block {
+    transform: translateY(300px); /* 两侧向下偏移，显得更晚更低 */
+    z-index: 1;
+}
+
+/* 完整保留你原来的图片效果 --- */
+.treatment-svg {
     width: 360px; 
     height: 360px; 
     margin: 0 auto;
     display: block;
     object-fit: contain;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    /* 这里的 transition 确保了 hover 时的动画平滑 */
+    transition: transform 0.3s ease, filter 0.3s ease; 
 }
 
-.limitation-svg:hover {
+/* 位移、放大、旋转、阴影 */
+.treatment-svg:hover {
     transform: translateY(-10px) scale(1.08) rotate(4deg);   
     filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.15));
 }
-.brainstorm-section {
-    position: relative;
-}
-.brainstorm-center {
+
+/* --- 正文文字样式 --- */
+.treatment-desc {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.6rem;
+    line-height: 1.6;
+    color: #333;
+    max-width: 80%; /* 限制文字宽度，使其在 360px 图片下方更美观 */
+    margin: 15px auto 0;
     text-align: center;
-    margin-bottom: 40px;
 }
-.brainstorm-icon {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 15px;
+
+/* --- 手机端取消位移并缩小图片 --- */
+@media (max-width: 1200px) {
+    .treatment-svg {
+        width: 100%; /* 大屏幕以下图片自适应容器宽度 */
+        max-width: 320px;
+        height: auto;
+    }
 }
-.brainstorm-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-}
+
 @media (max-width: 768px) {
-    .brainstorm-grid { grid-template-columns: 1fr; }
+    .treatment-side-block, .treatment-center-block {
+        transform: translateY(0); /* 手机端恢复垂直排列 */
+        margin-bottom: 50px;
+    }
+    .treatment-main-container {
+        padding: 0 20px;
+    }
 }
-.brainstorm-card {
-    text-align: center;
-    padding: 20px;
-}
-.brainstorm-card .brainstorm-icon {
-    width: 80px;
-    height: 80px;
-}
-.home-bottom-white {
-    background: #fff;
-    padding-bottom: 60px;
-}
+
+/* <!-- Our solution Section (white bg from here to footer) --> */
+
 .solution-section {
     background: #fff;
     padding: 0 0 40px 0;

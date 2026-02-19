@@ -36,7 +36,7 @@
   <div class="container-fluid">
 
     <!---- TEAM NAME ---->
-    <a class="navbar-brand ps-5 d-flex align-items-center" href="#">
+    <a class="navbar-brand ps-5 d-flex align-items-center" href="index.html">
       <span style="color: #527379; font-family: 'Caveat', cursive; font-size: 1.8rem; margin-right: 12px;">IGNITE</span>
       <img src="static/img/logo2.svg" alt="logo" height="30">
     </a>
@@ -132,8 +132,8 @@
         <h1 class="hero-title mb-3">IGNITE</h1>
         </div>
 
-    <a href="#home-main-content" class="btn btn-hero hero-btn-bottom">Ready to Know Who We Are</a>
-    <a href="#home-main-content" class="scroll-down-arrow">
+    <a href="#TheProblem" class="btn btn-hero hero-btn-bottom">Ready to Know Who We Are</a>
+    <a href="#TheProblem" class="scroll-down-arrow">
         <i class="fas fa-chevron-down"></i>
     </a>
 </header>
@@ -141,9 +141,7 @@
 
   <!-- Page Content -->
   
-<div id="home-main-content">
-
-
+<div id="TheProblem">
 <!-- THE PROBLEM Section -->
 <section class="home-section" style="background-color: #fcfbf9;">
     <div class="container">
@@ -199,6 +197,7 @@
         </div>
     </div>
 </section>
+</div>
 
 <!-- Why SCLC? Section -->
 <section class="home-section" style="background-color: #fcfbf9;">
@@ -210,7 +209,7 @@
                 <span class="problem-quote-mark quote-bottom-right">”</span>
             </div>
         </div>
-        <div class="d-flex justify-content-center gap-4 flex-wrap mb-4" >
+        <div class="d-flex justify-content-center gap-4 flex-wrap mb-4 sclc-compare-stack" >
             <span class="sclc-label">SCLC  </span>
             <span class="nsclc-label">NSCLC</span>
         </div>
@@ -225,7 +224,7 @@
     <div class="container treatment-container"> <div class="text-center mb-5 mt-4">
             <div class="problem-heading-wrapper" style="padding: 0 30px; margin-bottom: 0;">
                 <span class="problem-quote-mark quote-top-left" style="top: -10px; left: -10px;">“</span>
-                <span class="fw-bold" style="font-family: 'Playfair Display', serif; font-size: 2.25rem; color: #527379;">
+                <span class="fw-bold" style="font-family: 'Idiqlat-Regular', serif; font-size: 2.8rem; color: #527379;">
                     Current treatments for SCLC have obvious limitations: 
                 </span>
                 <span class="problem-quote-mark quote-bottom-right" style="top: auto; bottom: -75px; right: -20px;">”</span>
@@ -260,50 +259,66 @@
 
 <!-- Our solution Section (white bg from here to footer) -->
 <div class="home-bottom-white">
-<section class="solution-section">
-    <div class="text-center">
-        <img src="static/img/home/our%20solution.svg" alt="Our solution" class="solution-banner">
-    </div>
+    <section class="solution-section">
+        <div class="text-center">
+            <img src="static/img/home/our%20solution.svg" alt="Our solution" class="solution-banner">
+        </div>
     <div class="container solution-content">
-        <!-- Colonization -->
         <div class="row align-items-center solution-step">
-            <div class="col-md-6">
-                <div class="solution-box"><h4 class="solution-step-title mb-0">Colonization</h4></div>
+            <div class="col-md-6 solution-text-box text-box-1">
+                <div class="solution-box"><h4 class="solution-step-title mb-0" style="font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 2rem;">Colonization</h4></div>
                 <p class="mt-2 mb-0">The bacteria are administered via nebulizer, enabling them to selectively colonize the lung tumor microenvironment.</p>
             </div>
-            <div class="col-md-6 text-center">
+            <div class="col-md-6 text-center solution-img-box img-box-1">
                 <img src="static/img/home/solution%20fig1.svg" alt="Colonization" class="img-fluid solution-img">
             </div>
         </div>
 
-        <!-- Secretion -->
         <div class="row align-items-center solution-step">
-            <div class="col-md-6 text-center order-2 order-md-1">
-                <img src="static/img/home/solution%20fig2.svg" alt="Secretion" class="img-fluid solution-img">
+            <div class="col-md-6 text-center order-2 order-md-1 solution-img-box img-box-2">
+                <img src="static/img/home/solution%20fig2.svg" alt="Secretion" class="img-fluid solution-img" id="scroll-fly-img">
             </div>
-            <div class="col-md-6 order-1 order-md-2">
-                <div class="solution-box"><h4 class="solution-step-title mb-0">Secretion</h4></div>
+            <div class="col-md-6 order-1 order-md-2 solution-text-box text-box-2">
+                <div class="solution-box"><h4 class="solution-step-title mb-0" style="font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 2rem;">Secretion</h4></div>
                 <p class="mt-2 mb-0">Once localized, they continuously secrete the MYC-aggregating peptide.</p>
             </div>
         </div>
 
-        <!-- Action -->
         <div class="row align-items-center solution-step">
-            <div class="col-md-6">
-                <div class="solution-box"><h4 class="solution-step-title mb-0">Action</h4></div>
+            <div class="col-md-6 solution-text-box text-box-3">
+                <div class="solution-box"><h4 class="solution-step-title mb-0" style="font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 2rem;">Action</h4></div>
                 <p class="mt-2 mb-0">The peptide enters cancer cells, triggering MYC assembly ("BOOM!"), which leads to targeted cancer cell death and tumor regression.</p>
             </div>
-            <div class="col-md-6 text-center">
+            <div class="col-md-6 text-center solution-img-box img-box-3">
                 <img src="static/img/home/solution%20fig3.svg" alt="Action" class="img-fluid solution-img d-block mt-2 mx-auto">
             </div>
         </div>
     </div>
 </section>
 </div>
+<!-- HOPE -->
+<section class="home-section hope-section" style="background-color: #ffffff;">
+    <div class="container text-center"> 
+        
+        <div class="text-center mt-4 mb-5">
+            <div class="problem-heading-wrapper" style="padding: 0 30px; margin-bottom: 40px;">
+                <span class="problem-quote-mark quote-top-left" style="top: -10px; left: -10px;">“</span>
+                <span class="fw-bold" style="font-family: 'Idiqlat-ExtraLight', serif; font-size: 3rem; color: #527379;">
+                    Our therapy brings back <span style="font-family: 'Idiqlat-Regular', serif; color: #F0AD4E; font-weight: bold;">HOPE</span> for SCLC patients.
+                </span>
+                <span class="problem-quote-mark quote-bottom-right" style="top: auto; bottom: -75px; right: -20px;">”</span>
+            </div>
+        </div>
+
+        <div class="hope-img-wrapper mt-4">
+            <img src="static/img/home/HOPE.svg" alt="HOPE" class="img-fluid" style="max-width: 600px;">
+        </div>
+
+    </div>
+</section>
 
 <script src="static/javascript/number.js"></script>
 
-</div>
 
 
 
@@ -316,7 +331,7 @@
         <div class="d-flex align-items-center gap-2">
           <img src="static/img/logo1.svg" alt="IGNITE logo" class="footer-logo">
         </div>
-        <div class="footer-contact">
+        <div class="footer-contact" >
           <p class="mb-1">2026 Zhejiang University</p>
           <p class="mb-1">ZJU-China</p>
           <p class="mb-0"><a href="mailto:igemzjuchina@zju.edu.cn">igemzjuchina@zju.edu.cn</a></p>
@@ -330,7 +345,7 @@
 
     <!-- Bottom Section -->
     <div class="row mt-4">
-      <div class="col">
+      <div class="col" style="font-family: 'Kalam', sans-serif;">
         <p class="mb-1"><small>© 2026 - Content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
         <p class="mb-1"><small>The repository used to create this website is available at <a href="https://github.com/Blanchez66/iGEM2026-WP-Cohort2">github.com/Blanchez66/iGEM2026-WP-Cohort2</a>.</small></p>
       </div>
@@ -342,6 +357,8 @@
   <script src="static/javascript/bootstrap.bundle.min.js"></script>
 
   <!-- Custom Scripts -->
+  <script src="static/javascript/layout-scale.js"></script>
+  <script src="static/javascript/scroll-restore.js"></script>
   <script src="static/javascript/toc.js"></script>
 </body>
 </html>

@@ -9,6 +9,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: #ffffff;
 }
+/* 设置根元素的字体大小动态随窗口变化 */
+
 .left-aligned { margin-left: auto; }
 .bg-dark { background-color: #fcfbf9 !important; }
 .bg-hero { background-color: #fcfbf9; }
@@ -113,8 +115,9 @@ footer a:hover { color: #527379; text-decoration: underline; }
     height: 128px;
 }
 .footer-contact p {
-    margin-bottom: 0.25rem;
-    font-size: 0.95rem;
+    margin-bottom: 0rem;
+    font-family: 'Kalam', sans-serif;
+    font-size: 1.1rem;
 }
 .footer-partner-logo {
     height: 64px;
@@ -133,7 +136,7 @@ footer a:hover { color: #527379; text-decoration: underline; }
 .footer-sitemap-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     text-decoration: none;
     color: #333;
 }

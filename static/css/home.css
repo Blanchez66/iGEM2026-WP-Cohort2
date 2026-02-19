@@ -398,6 +398,9 @@ html {
 }
 .solution-content {
     padding-top: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.0rem;
+    line-height: 1.6;
 }
 .solution-box {
     background-color: #dee9f5;
@@ -420,20 +423,253 @@ html {
     font-style: italic;
     display: block;
 }
+/* 赋予所有 solution-step 相对定位，使得 z-index 能够生效 */
 .solution-step {
-    margin-bottom: 40px;
+    position: relative; 
 }
-.video-section {
-    background-color: #dee9f5;
-    padding: 60px 0;
+
+.solution-step:nth-child(1) {
+    z-index: 1; /* 设置较低的层级 */
 }
-.video-placeholder {
-    background: #fff;
-    border-radius: 12px;
-    aspect-ratio: 16/9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 800px;
-    margin: 0 auto;
+.solution-step:nth-child(1) .solution-img {
+    max-width: 800px; 
+}
+.solution-step:nth-child(2) {
+    z-index: 2; /* 设置更高的层级，确保它覆盖在第一层上面 */
+    margin-top: 20px; /* 关键：使用负边距将该模块向上拉。数值越大重叠越多，你可以根据视觉效果自行调整 -80px */
+}
+.solution-step:nth-child(2) .solution-img {
+    max-width: 1000px; 
+}
+
+.solution-step:nth-child(3) {
+    z-index: 3;
+}
+.solution-step:nth-child(3) .solution-img {
+    /* 中心为 #fdfcf8，向四周边缘自然过渡到纯白 #ffffff */
+    background: radial-gradient(closest-side, #fdfcf8 0%, #ffffff 100%); 
+    /* 添加内边距，向外延伸出渐变的空间（数值越大，延伸出去的底色范围越广） */
+    padding: 100px; 
+    /* 抵消 padding 带来的图片视觉缩小，可以适当调大最大宽度 */
+    max-width: 700px; 
+}
+
+/* 给每个模块开启相对定位，允许它们脱离原始的呆板网格 */
+.solution-text-box, .solution-img-box {
+    position: relative;
+}
+
+/* top: 正数向下移动，负数向上移动 (-20px)
+   left: 正数向右移动，负数向左移动 (-20px)
+   z-index: 数值越大的元素，显示在越上层（覆盖别人）
+*/
+
+/* --- Colonization --- */
+.text-box-1 {
+    top: 150px;    
+    left: 0px;   
+    z-index: 10; 
+}
+.img-box-1 {
+    top: 130px;
+    left: -40px;
+    z-index: 5;
+}
+
+/* --- Secretion --- */
+.text-box-2 {
+    top: 100px;
+    left: -20px;
+    z-index: 10;
+}
+.img-box-2 {
+    top: -130px;
+    left: 80px;
+    z-index: 5;
+}
+
+/* --- Action --- */
+.text-box-3 {
+    top: -100px;
+    left: 0px;
+    z-index: 10;
+}
+.img-box-3 {
+    top: -100px;
+    left: -30px;
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .text-box-1, .img-box-1,
+    .text-box-2, .img-box-2,
+    .text-box-3, .img-box-3 {
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        margin-bottom: 20px; /* 在手机端增加一点上下间距 */
+    }
+}
+
+#scroll-fly-img {
+    /* 让 JS 控制的位移带有 0.1秒 的缓冲，看起来就像有惯性一样丝滑 */
+    transition: transform 0.1s ease-out;
+    /* 保证它在没有任何 JS 干预时的初始状态就是原始大小和位置 */
+    transform: translate(0, 0); 
+}
+
+/* 专门控制 HOPE 区块的样式 */
+.hope-section {
+    /* 控制与上方 (Our Solution) 的间距，数字越大距离越远 */
+    padding-top: -60px; 
+    
+    /* 控制与下方 (Footer) 的间距，数字越大距离越远 */
+    padding-bottom: 60px; 
+}
+
+/* 控制图片自身的大小和与上方文字的距离 */
+.hope-img-wrapper img {
+    /* 如果你觉得图片太宽或太窄，调这里 */
+    max-width: 600px; 
+    
+    /* 控制图片和上面文字的具体距离 */
+    margin-top: 20px; 
+}
+
+/* 手机端适配：屏幕变小时稍微缩小间距和图片大小 */
+@media (max-width: 768px) {
+    .hope-section {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    .hope-img-wrapper img {
+        max-width: 80%; /* 手机上占宽度的80% */
+    }
+}
+
+/* Mobile-first overrides for homepage layout stacking */
+@media (max-width: 768px) {
+    .hero-section {
+        transform: none;
+        min-height: 100svh;
+        background-size: 55% auto;
+        background-position: center 32%;
+        padding-top: 0;
+    }
+
+    .hero-subtitle {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+        white-space: normal;
+        width: auto;
+        text-align: center;
+        font-size: 1.1rem;
+        margin: 0 1rem 1rem;
+        clip-path: none;
+        animation: none;
+    }
+
+    .hero-title {
+        font-size: 4.5rem;
+        line-height: 1;
+        letter-spacing: 2px;
+    }
+
+    .hero-btn-bottom {
+        bottom: 94px;
+        width: calc(100% - 48px);
+        max-width: 320px;
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    .scroll-down-arrow {
+        bottom: 28px;
+        font-size: 1.6rem;
+    }
+
+    .home-section {
+        padding: 42px 0;
+    }
+
+    .problem-heading-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .problem-text {
+        font-size: 2rem;
+        padding: 8px 20px;
+    }
+
+    .problem-quote-mark {
+        font-size: 2.4rem;
+    }
+
+    .quote-top-left {
+        top: -6px;
+        left: 0;
+    }
+
+    .quote-bottom-right {
+        top: auto;
+        bottom: -12px;
+        right: -4px;
+    }
+
+    .home-section p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .sclc-compare-stack {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px !important;
+    }
+
+    .sclc-label,
+    .nsclc-label {
+        width: 220px;
+        font-size: 1.2rem;
+    }
+
+    .treatment-container {
+        padding: 0 20px 60px !important;
+    }
+
+    .treatment-desc {
+        font-size: 1rem;
+        max-width: 95%;
+    }
+
+    .solution-content {
+        padding-top: 16px;
+        font-size: 1.15rem;
+    }
+
+    .solution-box {
+        display: block;
+        text-align: center;
+    }
+
+    .solution-step {
+        margin-top: 0 !important;
+    }
+
+    .solution-step .solution-img {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .solution-text-box,
+    .solution-img-box {
+        text-align: center;
+    }
+
+    .hope-section .fw-bold {
+        font-size: 2rem !important;
+        line-height: 1.3;
+    }
 }

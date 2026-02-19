@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Ranga:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
 
 /* Home Page Hero Section */
 .hero-section {
     position: relative;
-    transform: translateY(-30px);
+    transform: translateY(-40px);
     background-color: #fff;
     background-image: url("../img/home/homehead小金人.svg");
     background-size: 30% auto;
     background-position: center;
     background-repeat: no-repeat;
+    padding-top: 10px;
     color: #333;
 }
 
@@ -18,16 +22,40 @@
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-family: 'Caveat', cursive; /* 确保使用的是手写字体 */
+    font-size: 2rem; /* 根据需要调整大小 */
     color: #777;
-    text-align: center;
-    padding: 16px 20px 0;
     margin: 0;
+    
+    /* 之前的定位代码 */
+    position: absolute;
+    top: -180px; 
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* 强制一行显示 */
+    white-space: nowrap; 
+    width: max-content; 
+
+    /* 书写动画的核心 */
+    clip-path: inset(0 100% 0 0); /* 初始状态：从右侧裁剪掉 100% 的内容（完全隐藏） */
+    animation: handwritingReveal 4.5s ease-in-out forwards; /* 2.5秒完成，ease-in-out 让起笔和收笔稍微柔和，forwards 保持写完的状态 */
+    animation-delay: 0.4s; /* 稍微延迟 0.3 秒，等页面加载出来后再开始写 */
+}
+
+/* 定义从左到右显示的动画关键帧 */
+@keyframes handwritingReveal {
+    0% {
+        clip-path: inset(0 100% 0 0); /* 开始时隐藏 */
+    }
+    100% {
+        clip-path: inset(0 0 0 0); /* 结束时全部显示 */
+    }
 }
 
 .hero-title {
     font-family: 'Ranga', cursive;
-    font-size: 128px;
+    font-size: 150px;
     font-weight: 700;
     font-style: normal;
     line-height: 1.1;
@@ -37,15 +65,57 @@
     margin: 0;
 }
 
+/* --- Ready to know who we are 专属按钮样式 --- */
+.btn-hero {
+    font-family: 'Questrial', sans-serif; /* 更改字体为 Questrial */
+    color: #527379;                     /* 文字颜色 */
+    border: 2px solid #527379;          /* 边框颜色和粗细 */
+    background-color: transparent;        /* 默认背景透明 */
+    border-radius: 8px;                   /* 圆角，和下面的按钮统一 */
+    padding: 6px 16px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;            /* 增加平滑的动画过渡 */
+}
+
+.btn-hero:hover {
+    background-color: #527379;          /* 背景变成主题色 */
+    color: #ffffff;                     /* 文字变成白色 */
+    border-color: #527379;
+}
+
+.hero-btn-bottom {
+    position: absolute;
+    bottom: 130px;  /* 箭头在 bottom: 60px 的位置，130px 刚好悬浮在它上方 */
+    left: 50%;
+    transform: translateX(-50%); /* 确保按钮水平完美居中 */
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInButton 1s ease 4.5s forwards;
+}
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px); /* 保持水平居中的同时，初始位置稍微偏下 20px */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);    /* 回到正常位置，完全不透明 */
+    }
+}
+
 .scroll-down-arrow {
     position: absolute;
-    bottom: 60px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
     font-size: 2rem;
-    color: #888;
-    animation: bounce 2s infinite;
+    color: #908f8f;
+    animation: bounce 2.5s infinite;
+    transition: color 0.3s ease;
+}
+.scroll-down-arrow:hover {
+    color: #527379 !important;
 }
 
 @keyframes bounce {
@@ -91,18 +161,6 @@ html {
     font-size: 1rem;
     color: #555;
 }
-.problem-quote {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-.problem-quote svg, .quote-icon {
-    width: 40px;
-    height: 40px;
-    color: #333;
-}
 /* 标题外层容器，inline-block 确保它紧贴文字宽度，方便双引号定位 */
 .problem-heading-wrapper {
     position: relative;
@@ -135,14 +193,51 @@ html {
 /* 左上角双引号定位 */
 .quote-top-left {
     top: -10px;
-    left: 0;
+    left: 10;
 }
 
 /* 右下角双引号定位 */
 .quote-bottom-right {
+    top: 70px;
+    right: -10px;
+}
+
+.home-section p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.85rem; /* 这里是控制字号大小的属性 */
+    line-height: 1.6; /* 稍微增加行高，让大段文字读起来更舒服 */
+}
+
+/* Why SCLC 靠右且单引号样式 */
+
+/* 让 Why SCLC 专用标题容器靠右 */
+.problem-heading-wrapper.align-right-mode {
+    display: inline-block;
+}
+
+/* 隐藏这个标题的左引号 */
+.align-right-mode .quote-top-left {
+    display: none;
+}
+
+/* 既然左边没引号了，缩小左边内边距，让文字更靠右 */
+.align-right-mode .problem-text {
+    padding-left: 0px; 
+    padding-right: 35px; /* 保留右侧给引号的空间 */
+}
+
+/* 调整右下角引号，确保它紧贴文字 */
+.align-right-mode .quote-bottom-right {
     top: 60px;
     right: -10px;
 }
+
+/* 让高亮数字显示为特定颜色 */
+.highlight-number {
+    color: #527379;
+    font-weight: bold; /* 确保它依然是加粗的 */
+}
+
 .btn-orange {
     background-color: #f8c38a;
     color: #333;
@@ -150,10 +245,12 @@ html {
     border-radius: 8px;
     padding: 10px 24px;
 }
+
 .btn-orange:hover {
     background-color: #f0ad4e;
     color: #fff;
 }
+
 .btn-blue {
     background-color: #dee9f5;
     color: #333;
@@ -161,26 +258,60 @@ html {
     border-radius: 8px;
     padding: 10px 24px;
 }
+
 .btn-blue:hover {
     background-color: #bad1e2;
     color: #333;
 }
+
 .sclc-label {
     background-color: #f0a060;
     color: #fff;
-    padding: 12px 32px;
+    /* 上下保留 padding，左右 padding 可以减小，因为我们已经用 width 固定宽度了 */
+    padding: 12px 0; 
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 700; 
     display: inline-block;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.5rem; 
+    
+    /* --- 新增：固定大小与居中 --- */
+    width: 160px; /* 统一的宽度，如果觉得不够宽可以改成 180px 等 */
+    text-align: center; /* 确保文字在方块内居中 */
+    
+    /* --- 新增：动画过渡与鼠标手势 --- */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 让放大过程平滑 */
+    cursor: default; /* 如果你想让鼠标放上去变成小手，可以把 default 改成 pointer */
 }
+
+/* SCLC 鼠标悬停(hover)的效果 */
+.sclc-label:hover {
+    transform: scale(1.1); /* 放大 1.1 倍 */
+    box-shadow: 0 8px 15px rgba(240, 160, 96, 0.4); /* (可选) 增加一点同色系的阴影，让它看起来更立体 */
+}
+
 .nsclc-label {
     background-color: #b8d4e8;
     color: #fff;
-    padding: 12px 32px;
+    padding: 12px 0;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 700; 
     display: inline-block;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.5rem; 
+    
+    width: 160px; 
+    text-align: center; 
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default; 
 }
+
+.nsclc-label:hover {
+    transform: scale(1.1); /* 放大 1.1 倍 */
+    box-shadow: 0 8px 15px rgba(184, 212, 232, 0.4); /* (可选) 增加一点同色系阴影 */
+}
+
 .limitation-svg {
     width: 360px; 
     height: 360px; 
@@ -264,25 +395,6 @@ html {
 }
 .solution-step {
     margin-bottom: 40px;
-}
-.footer-sitemap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-.footer-sitemap-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: #333;
-}
-.footer-sitemap-item:hover { color: #527379; }
-.footer-sitemap-item svg, .sitemap-icon {
-    width: 32px;
-    height: 32px;
 }
 .video-section {
     background-color: #dee9f5;

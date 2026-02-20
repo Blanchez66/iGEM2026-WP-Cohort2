@@ -15,44 +15,33 @@
     padding-top: 10px;
     color: #333;
 }
-
 .hero-content {
     position: relative;
     z-index: 2;
 }
-
 .hero-subtitle {
-    font-family: 'Caveat', cursive; /* 确保使用的是手写字体 */
-    font-size: 2rem; /* 根据需要调整大小 */
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
     color: #777;
     margin: 0;
-    
-    /* 之前的定位代码 */
     position: absolute;
     top: -180px; 
     left: 50%;
     transform: translateX(-50%);
-    
-    /* 强制一行显示 */
     white-space: nowrap; 
     width: max-content; 
-
-    /* 书写动画的核心 */
-    clip-path: inset(0 100% 0 0); /* 初始状态：从右侧裁剪掉 100% 的内容（完全隐藏） */
-    animation: handwritingReveal 4.5s ease-in-out forwards; /* 2.5秒完成，ease-in-out 让起笔和收笔稍微柔和，forwards 保持写完的状态 */
-    animation-delay: 0.4s; /* 稍微延迟 0.3 秒，等页面加载出来后再开始写 */
+    clip-path: inset(0 100% 0 0);
+    animation: handwritingReveal 4.5s ease-in-out forwards;
+    animation-delay: 0.4s;
 }
-
-/* 定义从左到右显示的动画关键帧 */
 @keyframes handwritingReveal {
     0% {
-        clip-path: inset(0 100% 0 0); /* 开始时隐藏 */
+        clip-path: inset(0 100% 0 0);
     }
     100% {
-        clip-path: inset(0 0 0 0); /* 结束时全部显示 */
+        clip-path: inset(0 0 0 0);
     }
 }
-
 .hero-title {
     font-family: 'Ranga', cursive;
     font-size: 150px;
@@ -65,41 +54,40 @@
     margin: 0;
 }
 
-/* --- Ready to know who we are 专属按钮样式 --- */
+/* --- Ready to know who we are 按钮 --- */
 .btn-hero {
-    font-family: 'Questrial', sans-serif; /* 更改字体为 Questrial */
-    color: #527379;                     /* 文字颜色 */
-    border: 2px solid #527379;          /* 边框颜色和粗细 */
-    background-color: transparent;        /* 默认背景透明 */
-    border-radius: 8px;                   /* 圆角，和下面的按钮统一 */
+    font-family: 'Questrial', sans-serif;
+    color: #527379;
+    border: 2px solid #527379;
+    background-color: transparent;
+    border-radius: 8px;
     padding: 6px 16px;
     font-size: 1.1rem;
-    transition: all 0.3s ease;            /* 增加平滑的动画过渡 */
+    transition: all 0.3s ease;
 }
-
 .btn-hero:hover {
-    background-color: #527379;          /* 背景变成主题色 */
-    color: #ffffff;                     /* 文字变成白色 */
+    background-color: #527379;
+    color: #ffffff;
     border-color: #527379;
 }
-
 .hero-btn-bottom {
     position: absolute;
-    bottom: 130px;  /* 箭头在 bottom: 60px 的位置，130px 刚好悬浮在它上方 */
+    bottom: 130px;
     left: 50%;
-    transform: translateX(-50%); /* 确保按钮水平完美居中 */
+    transform: translateX(-50%);
     z-index: 2;
     opacity: 0;
     animation: fadeInButton 1s ease 4.5s forwards;
 }
+
 @keyframes fadeInButton {
     0% {
         opacity: 0;
-        transform: translateX(-50%) translateY(20px); /* 保持水平居中的同时，初始位置稍微偏下 20px */
+        transform: translateX(-50%) translateY(20px); 
     }
     100% {
         opacity: 1;
-        transform: translateX(-50%) translateY(0);    /* 回到正常位置，完全不透明 */
+        transform: translateX(-50%) translateY(0);
     }
 }
 
@@ -114,7 +102,6 @@
     animation: bounce 2.5s infinite;
     transition: color 0.3s ease;
 }
-
 .scroll-down-arrow:hover {
     color: #527379 !important;
 }
@@ -134,11 +121,9 @@
 #TheProblem {
     scroll-margin-top: 56px; 
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 @font-face {
     font-family: 'Idiqlat';
     src: url("../fonts/Idiqlat-Light.ttf") format('truetype');
@@ -146,101 +131,64 @@ html {
     font-style: normal;
  }
 
-.home-section {
-    padding: 60px 0;
-}
-.section-title {
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-}
-.hero-illustration {
-    max-width: 280px;
-    height: auto;
-}
-.hero-description {
-    font-size: 1rem;
-    color: #555;
-}
-
 /* <!-- THE PROBLEM Section --> */
-/* 标题外层容器，inline-block 确保它紧贴文字宽度，方便双引号定位 */
 .problem-heading-wrapper {
     position: relative;
     display: inline-block; 
     margin-bottom: 40px;
-    /* 父级容器 container 默认是左对齐的，所以这里无需额外写 text-align: left */
 }
-
-/* 中间的 THE PROBLEM 文字 */
 .problem-text {
     font-family: 'Idiqlat', sans-serif;
     color: #527379;
     font-size: 3rem; 
     font-weight: bold;
     margin: 0;
-    /* 左右留出 padding 给绝对定位的双引号腾出空间 */
     padding: 10px 35px; 
     line-height: 1.2;
 }
-
-/* 双引号的基础样式 */
+/* 双引号 */
 .problem-quote-mark {
     font-family: 'Idiqlat', sans-serif;
-    color: #000000; /* 黑色 */
-    font-size: 4rem; /* 稍微比文字大一点，视觉冲击力更强 */
+    color: #000000;
+    font-size: 4rem;
     position: absolute;
     line-height: 1;
 }
-
-/* 左上角双引号定位 */
 .quote-top-left {
     top: -10px;
     left: 10;
 }
-
-/* 右下角双引号定位 */
 .quote-bottom-right {
     top: 70px;
     right: -10px;
 }
-
+.home-section {
+    padding: 60px 0;
+}
 .home-section p {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem; /* 这里是控制字号大小的属性 */
-    line-height: 1.6; /* 稍微增加行高，让大段文字读起来更舒服 */
+    font-size: 1.6rem;
+    line-height: 1.6;
 }
 
 /* <!-- Why SCLC? Section --> */
-
-/* Why SCLC 靠右且单引号样式 */
-
-/* 让 Why SCLC 专用标题容器靠右 */
 .problem-heading-wrapper.align-right-mode {
     display: inline-block;
 }
-
-/* 隐藏这个标题的左引号 */
 .align-right-mode .quote-top-left {
     display: none;
 }
-
-/* 既然左边没引号了，缩小左边内边距，让文字更靠右 */
 .align-right-mode .problem-text {
     padding-left: 0px; 
-    padding-right: 35px; /* 保留右侧给引号的空间 */
+    padding-right: 35px;
 }
-
-/* 调整右下角引号，确保它紧贴文字 */
 .align-right-mode .quote-bottom-right {
     top: 60px;
     right: -10px;
 }
-
-/* 让高亮数字显示为特定颜色 */
 .highlight-number {
     color: #527379;
-    font-weight: bold; /* 确保它依然是加粗的 */
+    font-weight: bold;
 }
 
 .btn-orange {
@@ -250,12 +198,10 @@ html {
     border-radius: 8px;
     padding: 10px 24px;
 }
-
 .btn-orange:hover {
     background-color: #f0ad4e;
     color: #fff;
 }
-
 .btn-blue {
     background-color: #dee9f5;
     color: #333;
@@ -263,7 +209,6 @@ html {
     border-radius: 8px;
     padding: 10px 24px;
 }
-
 .btn-blue:hover {
     background-color: #bad1e2;
     color: #333;
@@ -272,29 +217,21 @@ html {
 .sclc-label {
     background-color: #f0a060;
     color: #fff;
-    /* 上下保留 padding，左右 padding 可以减小，因为我们已经用 width 固定宽度了 */
     padding: 12px 0; 
     border-radius: 8px;
     font-weight: 700; 
     display: inline-block;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 1.5rem; 
-    
-    /* --- 固定大小与居中 --- */
-    width: 160px; /* 统一的宽度，如果觉得不够宽可以改成 180px 等 */
-    text-align: center; /* 确保文字在方块内居中 */
-    
-    /* --- 动画过渡与鼠标手势 --- */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 让放大过程平滑 */
+    width: 160px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
-
-/* SCLC 鼠标悬停(hover)的效果 */
 .sclc-label:hover {
-    transform: scale(1.1); /* 放大 1.1 倍 */
-    box-shadow: 0 8px 15px rgba(240, 160, 96, 0.4); /* 增加一点同色系的阴影，让它看起来更立体 */
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(240, 160, 96, 0.4);
 }
-
 .nsclc-label {
     background-color: #b8d4e8;
     color: #fff;
@@ -304,89 +241,57 @@ html {
     display: inline-block;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 1.5rem; 
-    
     width: 160px; 
     text-align: center; 
-    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer; 
 }
-
 .nsclc-label:hover {
-    transform: scale(1.1); /* 放大 1.1 倍 */
-    box-shadow: 0 8px 15px rgba(184, 212, 232, 0.4); /* (可选) 增加一点同色系阴影 */
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(184, 212, 232, 0.4);
 }
-
 /* <!-- Current Treatment blocks --> */
-
-/* 容器宽度与间距控制 --- */
 .treatment-container {
-    max-width: 1200px;  /* 调整此数值可改变正文部分的整体宽度 */
-    padding: 0 60px;    /* 增加屏幕两侧的大小，数值越大，两侧留白越多 */
+    max-width: 1200px;
+    padding: 0 60px;
     margin: 0 auto;
-    padding-bottom: 300px !important; /* 数值越大，距离越远 */
+    padding-bottom: 300px !important;
 }
-
-/* 错位布局效果 --- */
 .treatment-center-block {
-    transform: translateY(0); /* 中间最高 */
+    transform: translateY(0);
     z-index: 2;
 }
-
 .treatment-side-block {
-    transform: translateY(300px); /* 两侧向下偏移，显得更晚更低 */
+    transform: translateY(300px);
     z-index: 1;
 }
-
-/* 完整保留你原来的图片效果 --- */
 .treatment-svg {
-    width: 360px; 
-    height: 360px; 
+    width: 100%;          /* 让图片宽度跟随父容器（列宽）变化 */
+    max-width: 360px;     /* 限制最大宽度，防止在大屏幕上图片变得过大 */
+    height: auto;
     margin: 0 auto;
     display: block;
     object-fit: contain;
-    /* 这里的 transition 确保了 hover 时的动画平滑 */
     transition: transform 0.2s ease, filter 0.2s ease; 
-}
+    border-radius: 50px;
+    cursor: pointer; 
 
-/* 位移、放大、旋转、阴影 */
+}
 .treatment-svg:hover {
     transform: translateY(-10px) scale(1.08) rotate(4deg);   
     filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.15));
 }
-
-/* --- 正文文字样式 --- */
 .treatment-desc {
     font-family: 'Playfair Display', serif;
     font-size: 0.5rem;
     line-height: 1.6;
     color: #333;
-    max-width: 80%; /* 限制文字宽度，使其在 360px 图片下方更美观 */
+    max-width: 80%;
     margin: 15px auto 0;
     text-align: center;
 }
 
-/* --- 手机端取消位移并缩小图片 --- */
-@media (max-width: 1200px) {
-    .treatment-svg {
-        width: 100%; /* 大屏幕以下图片自适应容器宽度 */
-        max-width: 320px;
-        height: auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .treatment-side-block, .treatment-center-block {
-        transform: translateY(0); /* 手机端恢复垂直排列 */
-        margin-bottom: 50px;
-    }
-    .treatment-main-container {
-        padding: 0 20px;
-    }
-}
-
-/* <!-- Our solution Section (white bg from here to footer) --> */
-
+/* <!-- Our solution Section --> */
 .solution-section {
     background: #fff;
     padding: 0 0 40px 0;
@@ -421,20 +326,20 @@ html {
     font-style: italic;
     display: block;
 }
-/* 赋予所有 solution-step 相对定位，使得 z-index 能够生效 */
 .solution-step {
     position: relative; 
 }
 
 .solution-step:nth-child(1) {
-    z-index: 1; /* 设置较低的层级 */
+    z-index: 1;
 }
 .solution-step:nth-child(1) .solution-img {
     max-width: 800px; 
 }
+
 .solution-step:nth-child(2) {
-    z-index: 2; /* 设置更高的层级，确保它覆盖在第一层上面 */
-    margin-top: 20px; /* 关键：使用负边距将该模块向上拉。数值越大重叠越多，你可以根据视觉效果自行调整 -80px */
+    z-index: 2;
+    margin-top: 20px;
 }
 .solution-step:nth-child(2) .solution-img {
     max-width: 1000px; 
@@ -444,22 +349,19 @@ html {
     z-index: 3;
 }
 .solution-step:nth-child(3) .solution-img {
-    /* 中心为 #fdfcf8，向四周边缘自然过渡到纯白 #ffffff */
     background: radial-gradient(closest-side, #fdfcf8 0%, #ffffff 100%); 
-    /* 添加内边距，向外延伸出渐变的空间（数值越大，延伸出去的底色范围越广） */
     padding: 100px; 
-    /* 抵消 padding 带来的图片视觉缩小，可以适当调大最大宽度 */
     max-width: 700px; 
+    border-radius: 50px;
 }
 
-/* 给每个模块开启相对定位，允许它们脱离原始的呆板网格 */
 .solution-text-box, .solution-img-box {
     position: relative;
 }
 
-/* top: 正数向下移动，负数向上移动 (-20px)
-   left: 正数向右移动，负数向左移动 (-20px)
-   z-index: 数值越大的元素，显示在越上层（覆盖别人）
+/* top: 正数向下移动，负数向上移动
+   left: 正数向右移动，负数向左移动
+   z-index: 数值越大的元素，显示在越上层
 */
 
 /* --- Colonization --- */
@@ -505,51 +407,27 @@ html {
         top: 0 !important;
         left: 0 !important;
         transform: none !important;
-        margin-bottom: 20px; /* 在手机端增加一点上下间距 */
+        margin-bottom: 20px;
     }
 }
 
-
-
 .hover-zoom {
-    transition: transform 0.3s ease; /* 0.3秒平滑放大 */
+    transition: transform 0.3s ease;
 }
-
 .hover-zoom:hover {
-    transform: scale(1.08); /* 放大到 1.08 倍，按需修改数值 */
+    transform: scale(1.08);
     cursor: pointer;
 }
 
-/* 专门控制 HOPE 区块的样式 */
 .hope-section {
-    /* 控制与上方 (Our Solution) 的间距，数字越大距离越远 */
     padding-top: -60px; 
-    
-    /* 控制与下方 (Footer) 的间距，数字越大距离越远 */
     padding-bottom: 60px; 
 }
-
-/* 控制图片自身的大小和与上方文字的距离 */
 .hope-img-wrapper img {
-    /* 如果你觉得图片太宽或太窄，调这里 */
     max-width: 600px; 
-    
-    /* 控制图片和上面文字的具体距离 */
     margin-top: 20px; 
 }
 
-/* 手机端适配：屏幕变小时稍微缩小间距和图片大小 */
-@media (max-width: 768px) {
-    .hope-section {
-        padding-top: 50px;
-        padding-bottom: 60px;
-    }
-    .hope-img-wrapper img {
-        max-width: 80%; /* 手机上占宽度的80% */
-    }
-
-}
-/* 定义摇摆关键帧 */
 @keyframes sway {
     0% { transform: rotate(-3deg); }
     25% { transform: rotate(3deg); }
@@ -559,7 +437,6 @@ html {
 }
 
 .sway-animation {
-    transform-origin: center center; /* 确保是沿着图片正中心摇摆 */
-    animation: sway 12s ease-in-out infinite; /* 动画总长4秒，无限循环 */
-
+    transform-origin: center center;
+    animation: sway 12s ease-in-out infinite;
 }

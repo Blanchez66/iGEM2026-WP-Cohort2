@@ -123,7 +123,11 @@
     </div>
   </div>
 </nav>
-
+  <div id="scroll-progress-container">
+    <div id="progress-bar">
+        <img src="static/img/logo2.svg" id="progress-logo" alt="logo">
+    </div>
+  </div>
   <!-- Header -->
   
 <header class="hero-section vh-100 d-flex flex-column justify-content-center align-items-center text-center">
@@ -164,7 +168,11 @@
             <div class="col-md-7">
                 <p>
                     China's lifetime cancer incidence risk is about <strong class="highlight-number"><span class="counter-num" data-target="27.6">0</span>%</strong>.<br>
-                    The global lifetime cancer incidence risk is about <strong class="highlight-number"><span class="counter-num" data-target="25.1">0</span>%</strong>, meaning that roughly one in four people will face a cancer threat in their lifetime.
+                    The global lifetime cancer incidence risk is about <strong class="highlight-number"><span class="counter-num" data-target="25.1">0</span>%</strong>,
+                </p>
+
+                <p>
+                    meaning that roughly one in four people will face a cancer threat in their lifetime.
                 </p>
             </div>
         </div>
@@ -276,7 +284,7 @@
 
         <div class="row align-items-center solution-step">
             <div class="col-md-6 text-center order-2 order-md-1 solution-img-box img-box-2">
-                <img src="static/img/home/solution%20fig2.svg" alt="Secretion" class="img-fluid solution-img" id="scroll-fly-img">
+                <img src="static/img/home/solution%20fig2.svg" alt="Secretion" class="img-fluid solution-img ">
             </div>
             <div class="col-md-6 order-1 order-md-2 solution-text-box text-box-2">
                 <div class="solution-box"><h4 class="solution-step-title mb-0" style="font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 2rem;">Secretion</h4></div>
@@ -290,7 +298,7 @@
                 <p class="mt-2 mb-0">The peptide enters cancer cells, triggering MYC assembly ("BOOM!"), which leads to targeted cancer cell death and tumor regression.</p>
             </div>
             <div class="col-md-6 text-center solution-img-box img-box-3">
-                <img src="static/img/home/solution%20fig3.svg" alt="Action" class="img-fluid solution-img d-block mt-2 mx-auto">
+                <img src="static/img/home/solution%20fig3.svg" alt="Action" class="hover-zoom img-fluid solution-img d-block mt-2 mx-auto">
             </div>
         </div>
     </div>
@@ -311,13 +319,14 @@
         </div>
 
         <div class="hope-img-wrapper mt-4">
-            <img src="static/img/home/HOPE.svg" alt="HOPE" class="img-fluid" style="max-width: 600px;">
+            <img src="static/img/home/HOPE.svg" alt="HOPE" class="img-fluid sway-animation" style="max-width: 600px;">
         </div>
 
     </div>
 </section>
 
 <script src="static/javascript/number.js"></script>
+
 
 
 
@@ -357,7 +366,9 @@
   <script src="static/javascript/bootstrap.bundle.min.js"></script>
 
   <!-- Custom Scripts -->
-  <script src="static/javascript/scroll-restore.js"></script>
+  <script src="static/javascript/h2-rollout.js"></script>
   <script src="static/javascript/toc.js"></script>
+  <script src="static/javascript/progressbar.js"></script>
+  
 </body>
 </html>

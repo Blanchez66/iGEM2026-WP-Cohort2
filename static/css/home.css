@@ -350,7 +350,7 @@ html {
     z-index: 1;
 }
 .solution-step:nth-child(1) .solution-img {
-    max-width: 600px; 
+    max-width:450px; 
 }
 
 .solution-step:nth-child(2) {
@@ -358,7 +358,7 @@ html {
     margin-top: 20px;
 }
 .solution-step:nth-child(2) .solution-img {
-    max-width: 800px; 
+    max-width: 700px; 
 }
 
 .solution-step:nth-child(3) {
@@ -367,7 +367,7 @@ html {
 .solution-step:nth-child(3) .solution-img {
     background: radial-gradient(closest-side, #fdfcf8 0%, #ffffff 100%); 
     padding: 100px; 
-    max-width: 600px; 
+    max-width: 500px; 
     border-radius: 50px;
 }
 
@@ -394,13 +394,13 @@ html {
 
 /* --- Secretion --- */
 .text-box-2 {
-    top: 100px;
+    top: 80px;
     left: -20px;
     z-index: 10;
 }
 .img-box-2 {
-    top: -130px;
-    left: 80px;
+    top: -63px;
+    left: 110px;
     z-index: 5;
 }
 
@@ -436,7 +436,7 @@ html {
 }
 
 .hope-section {
-    padding-top: -60px; 
+    padding-top: -280px; 
     padding-bottom: 60px; 
 }
 

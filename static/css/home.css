@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rasa:wght@300;400;500;600;700&display=swap');
 
 /* Home Page Hero Section */
 .hero-section {
@@ -124,13 +125,20 @@
 html {
     scroll-behavior: smooth;
 }
+
 @font-face {
     font-family: 'Idiqlat';
     src: url("../fonts/Idiqlat-Light.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
- }
+}
 
+@font-face {
+    font-family: 'Idiqlat-Regular';
+    src: url("../fonts/Idiqlat-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 /* <!-- THE PROBLEM Section --> */
 .problem-heading-wrapper {
     position: relative;
@@ -165,8 +173,16 @@ html {
 .home-section {
     padding: 60px 0;
 }
+
+.home-section > .container,
+.solution-section > .container,
+.hope-section > .container {
+    max-width: min(1520px, calc(100% - 40px));
+    padding-left: 200px;
+    padding-right: 200px;
+}
 .home-section p {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rasa', serif;
     font-size: 1.6rem;
     line-height: 1.6;
 }
@@ -252,8 +268,8 @@ html {
 }
 /* <!-- Current Treatment blocks --> */
 .treatment-container {
-    max-width: 1200px;
-    padding: 0 60px;
+    max-width: 1320px;
+    padding: 0 30px;
     margin: 0 auto;
     padding-bottom: 300px !important;
 }
@@ -266,8 +282,8 @@ html {
     z-index: 1;
 }
 .treatment-svg {
-    width: 100%;          /* 让图片宽度跟随父容器（列宽）变化 */
-    max-width: 360px;     /* 限制最大宽度，防止在大屏幕上图片变得过大 */
+    width: 80%; 
+    max-width: 320px;
     height: auto;
     margin: 0 auto;
     display: block;
@@ -304,7 +320,7 @@ html {
 }
 .solution-content {
     padding-top: 40px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Rasa', serif;
     font-size: 1.6rem;
     line-height: 1.6;
 }
@@ -334,7 +350,7 @@ html {
     z-index: 1;
 }
 .solution-step:nth-child(1) .solution-img {
-    max-width: 800px; 
+    max-width: 600px; 
 }
 
 .solution-step:nth-child(2) {
@@ -342,7 +358,7 @@ html {
     margin-top: 20px;
 }
 .solution-step:nth-child(2) .solution-img {
-    max-width: 1000px; 
+    max-width: 800px; 
 }
 
 .solution-step:nth-child(3) {
@@ -351,7 +367,7 @@ html {
 .solution-step:nth-child(3) .solution-img {
     background: radial-gradient(closest-side, #fdfcf8 0%, #ffffff 100%); 
     padding: 100px; 
-    max-width: 700px; 
+    max-width: 600px; 
     border-radius: 50px;
 }
 
@@ -422,6 +438,21 @@ html {
 .hope-section {
     padding-top: -60px; 
     padding-bottom: 60px; 
+}
+
+@media (max-width: 768px) {
+    .home-section > .container,
+    .solution-section > .container,
+    .hope-section > .container {
+        max-width: calc(100% - 24px);
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .treatment-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
 }
 .hope-img-wrapper img {
     max-width: 600px; 

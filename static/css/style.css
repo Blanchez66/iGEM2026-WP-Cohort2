@@ -3,13 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ranga:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
 
 body { 
     padding-top: 56px;
     font-family: 'Questrial', sans-serif;
     background-color: #ffffff;
 }
-/* 设置根元素的字体大小动态随窗口变化 */
 
 .left-aligned { margin-left: auto; }
 .bg-dark { background-color: #fcfbf9 !important; }
@@ -23,8 +24,6 @@ body {
 .navbar > .container {
     max-width: 960px;
 }
-
-/* title */
 
 /* menu & navbar */
 .navbar-dark .navbar-nav .nav-link {
@@ -55,19 +54,19 @@ body {
 
 .dropdown-menu {
     background-color: #fcfbf9;
-    border-radius: 8px; /* Adding rounded corners */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Adding a subtle shadow for better appearance */
-    border: none; /* Removing the default border for a cleaner look with shadow */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: none;
 }
 
 .dropdown-menu.show {
-    animation: fadeInDown 0.3s ease-out; /* Applying the animation */
+    animation: fadeInDown 0.3s ease-out;
 }
 
 .dropdown-item {
     font-family: 'Questrial', sans-serif;
     color: #527379;
-    padding: .5rem 1.5rem; /* Adjust padding for better spacing */
+    padding: .5rem 1.5rem;
 }
 
 .dropdown-item:hover,
@@ -76,7 +75,6 @@ body {
     color: #FAF9F6;
 }
 
-/* Ensure first and last items in dropdown have rounded corners */
 .dropdown-menu .dropdown-item:first-child {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -87,40 +85,33 @@ body {
     border-bottom-right-radius: 8px;
 }
 
-/* 进度条外层容器：固定在视口顶部 */
 #scroll-progress-container {
     position: fixed;
-    /* 这里的 top 值需要根据你导航栏的实际高度调整 */
-    /* 如果导航栏高度是 56px，这里就写 56px */
     top: 69px; 
     left: 0;
     width: 100%;
-    height: 4px; /* 进度条粗细 */
-    background: rgba(255, 255, 255, 0.2); /* 进度条底槽颜色 */
-    z-index: 1050; /* 确保在导航栏层级附近，且高于正文 */
-    pointer-events: none; /* 确保点击进度条不会影响下方的按钮 */
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 1050;
+    pointer-events: none;
 }
 
-/* 进度条本体 */
 #progress-bar {
     height: 100%;
     width: 0%; 
-    background: #F0AD4E; /* 你的主题色 */
+    background: #F0AD4E;
     position: relative;
-    transition: width 0.1s linear; /* 使用 linear 让滚动更平滑 */
+    transition: width 0.1s linear;
 }
 
-/* 进度条头部的 Logo */
 #progress-logo {
     position: absolute;
     right: -15px;
     top: 50%;
-    /* 初始状态：垂直居中 + 旋转0度 */
     transform: translateY(-50%) rotate(0deg); 
     width: 30px;
     height: 30px;
     z-index: 1051;
-    /* 增加旋转的平滑感 */
     transition: transform 0.1s linear; 
 }
 
@@ -176,7 +167,7 @@ footer a:hover { color: #527379; text-decoration: underline; }
 
 /* Table of Contents Sidebar */
 #toc-sidebar {
-    top: 70px; /* Offset for the fixed navbar */
+    top: 70px;
 }
 
 #toc-sidebar h5 {
@@ -204,30 +195,28 @@ footer a:hover { color: #527379; text-decoration: underline; }
     font-weight: bold;
 }
 
-/* 默认隐藏所有 h3 的列表容器 */
 #toc-sidebar .nav .nav {
     display: none;
     padding-left: 1.5rem;
     transition: all 0.3s ease;
 }
 
-/* 当父级 h2 的 <li> 处于激活状态时，显示其直接子级 <ul> (即 h3 列表) */
 #toc-sidebar .nav-item.active > .nav,
 #toc-sidebar .nav-link.active + .nav {
     display: block;
 }
 
-/* 给除了主页以外的其他子页面正文设置 Lora 字体 */
 #main-content {
-    font-family: 'Lora', serif;
-    font-size: 1.05rem; /* 可选：Lora 字体有时视觉上偏小，可以稍微放大一点增加阅读舒适度 */
-    line-height: 1.7;   /* 可选：增加行高，让长文排版更透气 */
+    font-family: 'Questrial', serif;
+    font-size: 1.2rem;
+    line-height: 1.7;
 }
-
-/* 确保子页面正文里的标题也继承 Lora 字体（如果需要的话） */
-#main-content h1, 
-#main-content h2, 
-#main-content h3, 
+#main-content h1,
+#main-content h2,
+#main-content h3{
+    font-family: 'Gabarito', sans-serif;
+    font-weight: 700;
+}
 #main-content h4, 
 #main-content h5, 
 #main-content h6 {
@@ -236,16 +225,20 @@ footer a:hover { color: #527379; text-decoration: underline; }
     scroll-margin-top: 80px;
 
 }
+
 h2{
     margin-bottom: 20px;
 }
-/* 标题悬停效果 */
+
 h2:hover {
-    color: #527379; /* 你的主题色 */
+    color: #527379;
+}
+
+h3{
+    color:#634e37
 }
 
 .collapse-wrapper {
     padding-left: 15px;
     margin-bottom: 20px;
-    
 }

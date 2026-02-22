@@ -261,7 +261,9 @@ footer a:hover { color: #527379; text-decoration: underline; }
     text-shadow: 0 0.2px 1.4px currentColor;
     font-weight: 700;
 }
-#main-content h4, 
+#main-content h4{
+    color:#bad1e2
+}
 #main-content h5, 
 #main-content h6 {
     font-family: 'Gabarito', serif;

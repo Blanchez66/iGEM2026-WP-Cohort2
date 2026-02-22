@@ -312,6 +312,24 @@ html {
     background: #fff;
     padding: 0 0 40px 0;
 }
+
+.solution-intro-card {
+    max-width: 900px;
+    margin: 0 auto 170px;
+    padding: 22px 28px;
+    background-color: #dee9f5;
+    border-radius: 20px;
+    box-shadow: 0 18px 34px rgba(52, 78, 102, 0.25);
+    transform: rotate(-1.8deg);
+    transform-origin: center center;
+}
+
+.solution-intro-text {
+    font-family: 'Rasa', serif;
+    font-size: 1.55rem;
+    line-height: 1.55;
+}
+
 .solution-banner {
     width: 100%;
     max-width: 100%;
@@ -452,6 +470,12 @@ html {
     .treatment-container {
         padding-left: 12px;
         padding-right: 12px;
+    }
+
+    .solution-intro-card {
+        transform: none;
+        padding: 20px 18px;
+        border-radius: 16px;
     }
 }
 .hope-img-wrapper img {

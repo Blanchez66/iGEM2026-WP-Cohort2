@@ -15,6 +15,14 @@
   text-align: center;
 }
 
+.design-video-player {
+  width: 100%;
+  max-width: 620px;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
 .hover-media-switch {
   position: relative;
   display: inline-block;

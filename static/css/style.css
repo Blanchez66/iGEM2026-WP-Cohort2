@@ -57,6 +57,7 @@ html {
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Questrial', sans-serif;
     font-size: 1.2em;
+    font-weight: 700;
     margin-right: 10px;
     color: #527379;
 }
@@ -66,7 +67,6 @@ html {
     background-color: #F0AD4E;
     border-radius: 5px;
 }
-
 
 /* dropdown menu */
 @keyframes fadeInDown {
@@ -262,7 +262,9 @@ footer a:hover { color: #527379; text-decoration: underline; }
     font-weight: 700;
 }
 #main-content h4{
-    color:#bad1e2
+    font-family: 'Gabarito', sans-serif;
+    font-weight: 700;
+    color:#5282a8;
 }
 #main-content h5, 
 #main-content h6 {

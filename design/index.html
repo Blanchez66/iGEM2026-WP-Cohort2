@@ -28,6 +28,23 @@
     <title>Project Design | iGEM Winter Project</title>
     
     
+<style>
+  .design-figure {
+    margin: 1.5rem 0 2rem;
+    text-align: center;
+  }
+  .design-figure img {
+    max-width: 100%;
+    height: auto;
+  }
+  .design-figure figcaption {
+    margin-top: 0.6rem;
+    color: #6c757d;
+    font-size: 0.92rem;
+    text-align: center;
+  }
+</style>
+
 </head>
 <body data-bs-spy="scroll" data-bs-target="#toc-sidebar" data-bs-offset="100">
   <!-- Navigation -->
@@ -159,143 +176,160 @@
       <div id="main-content" class="col-lg-9">
         
 
+<h2>Chassis Organism</h2>
+<p>
+  We aim to employ engineered bacteria as a platform for drug production and delivery, and through rational design, make treatment for SCLC more intelligent and personalized. Accordingly, we propose the following requirements for the chassis organism:
+</p>
+<h4>Safety</h4>
+<p>
+  The engineered bacteria should adapt to the pulmonary environment, colonize without causing tissue damage, pulmonary inflammation, or excessive immune responses. They must colonize only at target sites and not in healthy tissues. They must not disseminate into the bloodstream, and be unable to survive in external environments. The death of engineered bacteria should be controllable.
+</p>
+<h4>Stability</h4>
+<p>
+  The engineered bacteria should stably colonize target sites with acceptable biocompatibility to support long-term administration.
+</p>
+<h4>Targeting</h4>
+<p>
+  The engineered bacteria should be able to recognize the tumor microenvironment in the patient's lung, accumulate and colonize at the target site, and initiate drug secretion.
+</p>
+<h4>Secretion</h4>
+<p>
+  The engineered bacteria should efficiently synthesize and secrete the designed peptides for treatment.
+</p>
+<h4>Genetic tractability</h4>
+<p>
+  The engineered bacteria should be amenable for modular design and experimental validation, facilitating iterative engineering cycles.
+</p>
+<p>
+  Considering the therapeutic needs of SCLC — compatibility with the pulmonary environment and action at lung tumor sites — we initially selected Lactobacillus plantarum (referencing a previous iGEM project on lung-colonizing engineered bacteria) and Escherichia coli Nissle 1917 (EcN) as core candidate chassis organisms.
+</p>
+<p>
+  Although Lactobacillus plantarum has precedent in pulmonary delivery from prior projects and exhibits advantages in immunomodulation, our project requires more functional modules and relatively complex drug secretion pathways. Compared with Escherichia coli, lactic acid bacteria have fewer genetic modification tools, lower transformation efficiency, and less sophisticated protein secretion systems than Gram-negative bacteria, which limit the efficiency of peptide synthesis and secretion. Therefore, based on project requirements, we ultimately selected EcN as the chassis for engineering.
+</p>
+<p>Relative to the aforementioned requirements, EcN presents the following advantages:</p>
+<p><strong>Safe:</strong> As a probiotic, EcN has a long history of safe clinical use and is sensitive to multiple antibiotics. As a Gram-negative bacterium, its outer membrane vesicles (OMVs) can induce immune activation without triggering excessive inflammation.</p>
+<p><strong>Stable:</strong> EcN is natively facultatively anaerobic and can adapt to the hypoxic pulmonary environment. Although wild-type EcN is not naturally found in the lung, its pulmonary mucosal adhesion can be further improved. Given its high editability, EcN can be engineered to better suit the needs of lung colonization.</p>
+<p><strong>Precise:</strong> EcN natively possesses tumor tropism, driven by hypoxia-directed accumulation and adaptation to the immunosuppressive microenvironment. The hypoxic core of tumors attracts facultative anaerobes, while the immunosuppressive tumor milieu permits bacterial survival; in contrast, bacteria are cleared by immune mechanisms in healthy tissues.[1]</p>
+<p><strong>Effective:</strong> EcN possesses a well-characterized protein secretion system, making it suitable for peptide production.</p>
+<p><strong>Easy to work with:</strong> EcN is supported by a comprehensive toolkit for synthetic biology.</p>
 
-<h2>
-  Chassis Organism
-</h2>
+<figure class="design-figure">
+  <img src="../static/img/design/fig1.png" alt="Fig.1 schematic of inhaled engineered bacteria for SCLC therapy">
+  <figcaption>Fig.1 Schematic of Inhaled Engineered Bacteria for SCLC Therapy. a) Schematic showing the mechanism of engineered bacteria. b) The gene structure of two plasmids.</figcaption>
+</figure>
+
+<h2>1. Targeted Pulmonary Delivery via Aerosolization</h2>
 <p>
-  We aim to employ engineered bacteria as a platform for drug production and 
-  delivery , and through rational design, make treatment for SCLC more intelligent and 
-  personalized. Accordingly, we propose the following requirements for the chassis 
-  organism:
-</p>
-<h4>
-  Safety
-</h4>
-<p>
-  The engineered bacteria should adapt to the pulmonary environment, colonize without causing
-  tissue damage, pulmonary inflammation, or excessive immune responses. They must colonize
-  only at target sites and not in healthy tissues. They must not disseminate into the bloodstream,
-  and be unable to survive in external environments. The death of engineered bacteria should be
-  controllable.
-</p>
-<h4>
-  Stability
-</h4>
-<p>
-  The engineered bacteria should stably colonize target sites with acceptable biocompatibility to
-  support long-term administration.
-</p>
-<h4>
-  Targeting
-</h4>
-<p>
-  The engineered bacteria should be able to recognize the tumor microenvironment in the
-  patient's lung, accumulate and colonize at the target site, and initiate drug secretion.
-</p>
-<h4>
-  Secretion
-</h4>
-<p>
-  The engineered bacteria should efficiently synthesize and secrete the designed peptides for
-  treatment.  
-</p>
-<h4>
-  Genetic tractability
-</h4>
-<p>
-  The engineered bacteria should be amenable for modular design and experimental validation,
-  facilitating iterative engineering cycles.
+  Nebulization is employed as the primary administration route to deliver engineered bacteria directly to the lung. By fine-tuning the aerodynamic diameter of aerosol particles, we ensure efficient deposition within the bronchial and distal airway regions — the primary sites of small-cell lung cancer (SCLC). Beyond physical delivery, the engineered strain leverages its innate tropism for the unique tumor microenvironment (TME), characterized by hypoxia and high lactate levels. These metabolic cues serve as natural chemoattractants, guiding the bacteria to preferentially colonize the anaerobic, necrotic core of SCLC lesions.
 </p>
 <p>
-  Considering the therapeutic needs of SCLC — compatibility with the pulmonary environment
-  and action at lung tumor sites — we initially selected Lactobacillus plantarum (referencing a
-  previous iGEM project on lung-colonizing engineered bacteria) and Escherichia coli Nissle 1917
-  (EcN) as core candidate chassis organisms.
-</p>
-<p>
-  Although Lactobacillus plantarum has precedent in pulmonary delivery from prior projects and
-  exhibits advantages in immunomodulation, our project requires more functional modules and
-  relatively complex drug secretion pathways. Compared with Escherichia coli, lactic acid bacteria
-  have fewer genetic modification tools, lower transformation efficiency, and less sophisticated
-  protein secretion systems than Gram-negative bacteria, which limit the efficiency of peptide
-  synthesis and secretion. Therefore, based on project requirements, we ultimately selected EcN
-  as the chassis for engineering.
-</p>
-<p>
-  Relative to the aforementioned requirements, EcN presents the following advantages:
-</p>
-<p>
-  Safe: As a probiotic, EcN has a long history of safe clinical use and is sensitive to multiple
-  antibiotics. As a Gram-negative bacterium, its outer membrane vesicles (OMVs) can induce
-  immune activation without triggering excessive inflammation.
-</p>
-<p>
-  Stable: EcN is natively facultatively anaerobic and can adapt to the hypoxic pulmonary
-  environment. Although wild-type EcN is not naturally found in the lung, its pulmonary mucosal
-  adhesion can be further improved. Given its high editability, EcN can be engineered to better
-  suit the needs of lung colonization.
-</p>
-<p>
-  Precise: EcN natively possesses tumor tropism, driven by hypoxia-directed accumulation and
-  adaptation to the immunosuppressive microenvironment. The hypoxic core of tumors attracts
-  facultative anaerobes, while the immunosuppressive tumor milieu permits bacterial survival; in
-  contrast, bacteria are cleared by immune mechanisms in healthy tissues.[1]
-</p>
-<p>
-  Effective: EcN possesses a well-characterized protein secretion system, making it suitable for
-  peptide production.
-</p>
-<p>
-  Easy to work with: EcN is supported by a comprehensive toolkit for synthetic biology.
+  To further enhance precision, these bacteria are functionalized with surface-expressed DLL3 nanobodies, enabling active molecular recognition of SCLC cells. This multi-stage targeting strategy — integrating optimized physical deposition, innate metabolic tropism, and ligand-receptor mediated sequestration — maximizes intrapulmonary bacterial concentration while strictly minimizing systemic exposure.
 </p>
 
-
-
-<h2>Engineering Strategy and Modular Circuits</h2>
-
-<h3>1. Targeted Delivery: Aerosolization & Particle Size Control</h3>
+<h2>2. Pulmonary Colonization Module: Bronchial Adhesion via P30</h2>
 <p>
-We employ nebulization as the primary administration route. By precisely calibrating the aerodynamic diameter of the aerosol droplets, we can physically control the deposition site of the engineered bacteria within the respiratory tree. This physical positioning ensures that the bacteria reach the deep bronchial or alveolar regions where SCLC resides, minimizing systemic exposure and enhancing local concentration.
+  To enable prolonged retention in the respiratory tract, the engineered bacteria heterologously express the Mycoplasma pneumoniae P30 adhesin on their surface. This adhesion module allows the bacteria to anchor to the bronchial epithelium, effectively resisting mucociliary clearance and establishing stable colonization at the tumor-proximal site.
 </p>
 
-<h3>2. Pulmonary Retention Module (Bronchial Adhesion)</h3>
+<figure class="design-figure">
+  <img src="../static/img/design/fig2.png" alt="Fig.2 gene structure of targeting and colonization module">
+  <figcaption>Fig.2 Gene Structure of Targeting and Colonization Module.</figcaption>
+</figure>
+
+<h2>3. Density-Dependent Activation &amp; Homeostatic Control (Quorum Sensing Circuit)</h2>
 <p>
-Inspired by the specialized attachment mechanisms of <em>Mycoplasma pneumoniae</em>, we engineered EcN to heterologously express the P30 adhesin on its outer membrane. This module enables the bacteria to effectively bind to the bronchial epithelium, overcoming mucociliary clearance and ensuring stable, long-term colonization in the lung.
+  A quorum sensing (QS)-based regulatory module is incorporated to ensure population-level control. When bacterial density reaches a predefined threshold, QS signaling activates downstream therapeutic pathways while simultaneously engaging a negative feedback loop to limit further proliferation. This dual-function design maintains population homeostasis and prevents excessive immune stimulation or bacterial overgrowth. Notably, the quorum sensing module is directly linked to therapeutic short peptides, which are secreted through the hemolysin secretion system upon QS activation, so as to solve the problem of short peptide retention.
 </p>
 
-<h3>3. Homeostatic Regulation Module (Quorum Sensing & Negative Feedback)</h3>
+<figure class="design-figure">
+  <img src="../static/img/design/fig3.png" alt="Fig.3 schematic illustration of quorum sensing circuit">
+  <figcaption>Fig.3 Schematic Illustration of Quorum Sensing Circuit.</figcaption>
+</figure>
+
+<h2>4. Metabolic Microenvironment Sensing Module (Lactate-Responsive Circuit)</h2>
 <p>
-To prevent bacterial overgrowth and potential immune overstimulation, we incorporated a negative feedback loop based on Quorum Sensing (QS). When the bacterial density reaches a predefined threshold, the accumulated signaling molecules trigger a suppression circuit that slows down proliferation. This ensures a constant therapeutic dosage and maintains a stable population density within the lung.
+  A lactate-sensing module is integrated to act as a survival switch for engineered bacteria. Given the elevated lactate levels characteristic of SCLC due to the Warburg effect, this module serves as a key switch to determine the survival of engineered bacteria: the bacteria can only survive and colonize in the lactate-rich tumor microenvironment, while they fail to survive in normal tissues with low lactate levels. This design ensures tumor-specific colonization of the engineered bacteria, laying a foundation for subsequent QS-mediated short peptide secretion.
 </p>
 
-<h3>4. Precision Targeting Module (DLL3-Modified OMVs)</h3>
+<h2>5. Therapeutic Effector Module: Hemolysin-Mediated Secretion &amp; Amyloid-Induced Cytotoxicity</h2>
+<h3>Functional Peptide Design</h3>
 <p>
-The therapeutic engine relies on the secretion of Outer Membrane Vesicles (OMVs). These vesicles are surface-modified with DLL3 nanobodies, which act as "homing devices" to recognize and bind to the Delta-like ligand 3 (DLL3) highly expressed on SCLC cells. This ensures that the therapeutic cargo is concentrated specifically at the tumor site.
+  First, we analyze the aggregation-prone regions (APRs) of the target protein (such as N-MYC), primarily relying on the TANGO software for analysis. TANGO is a software tool for scoring and predicting protein APRs; it analyzes and scores each amino acid of the input protein sequence one by one, and when the scores of several consecutive amino acids are higher than a specific value, it indicates that this segment is the APR of the protein. After TANGO predicts the APR of the target protein, we slide with a step size of 1 amino acid to find the most suitable window of 5-7 amino acids and design a functional peptide segment (FuncPept) based on the figure below; at the same time, we also combine software such as WALZE to verify and screen our designed FuncPept to ensure it has good aggregation propensity and function. However, the steps of using TANGO, WALZE, and AlphaFold are too cumbersome; to better integrate the functions of these software tools and visualize the results, we are designing a software program to assist our experiments and allow our ideas to be applied as a foundational tool in more innovative fields (for details, please refer to our software section).
 </p>
 
-<h3>5. Stimuli-Responsive Therapeutic Module (MMP-Triggered Peptides)</h3>
+<figure class="design-figure">
+  <img src="../static/img/design/fig4.png" alt="Fig.4 schematic diagram of short peptides">
+  <figcaption>Fig.4 Schematic Diagram of Short Peptides.</figcaption>
+</figure>
+
+<h3>Logic Gates Designed for Tumors</h3>
 <p>
-The OMVs encapsulate highly potent cytotoxic short peptides. To strictly prevent off-target toxicity, the expression of these peptides is regulated by a Matrix Metalloproteinase (MMP) responsive promoter. The drugs are synthesized and released only in the SCLC microenvironment, where MMP levels are significantly elevated, ensuring high spatial specificity.
+  To ensure that FuncPept only functions in tumor cells without affecting normal cells, we identified Legumain, a protease with high specific expression in SCLC cells. Legumain, also known as Asparaginyl endopeptidase (AEP), is a widely distributed cysteine protease in mammals. The most prominent feature of Legumain is its extremely high recognition specificity for substrate sequences. It almost exclusively cleaves at the carboxyl terminus of asparagine residues. As a typical lysosomal protease, Legumain has the highest catalytic activity in an acidic environment (pH 4.0-6.0). In neutral or alkaline environments, its activity significantly decreases or even undergoes irreversible inactivation.
+</p>
+<p>
+  We added negatively charged shielding sequences to both ends of the designed FuncPept, which hinder contact between FuncPept and the APR of the target protein, thereby shielding its function. The amino acids connecting FuncPept and the shielding sequence are cleavage sites for Legumain. After our peptide segment enters cancer cells, Legumain cleaves off the negatively charged shielding sequence, thereby enabling FuncPept to exert its function.
 </p>
 
-<h3>6. Biosafety Module (Programmed Suicide Switch)</h3>
+<h3>Amyloid Clearance</h3>
 <p>
-In compliance with iGEM's Gold Medal safety standards, we integrated a programmed suicide switch. Utilizing an inducible toxin-antitoxin system (eg, CcdB/CcdA), we can trigger total bacterial elimination upon completion of the treatment or in the event of accidental displacement, ensuring zero environmental leakage and long-term biosafety.
+  The amyloid aggregation caused by long-term retention of FuncPept in the body may induce toxicity. To reduce and degrade these harmful amyloids, we turned our attention to macrophages. Macrophages phagocytize and degrade formed amyloids, thereby reducing their toxic effects.
 </p>
+<p>
+  To enhance recognition of amyloids by macrophages, we added the macrophage recognition sequence Tuftsin to one side of FuncPept. Tuftsin naturally originates from the Fc segment of the human immunoglobulin IgG heavy chain and is a natural tetrapeptide TKPR released by specific enzymatic cleavage in the spleen; it mainly exerts immunomodulatory effects by binding to specific receptors (such as Neuropilin-1, NRP1) on the surface of macrophages, monocytes, and neutrophils. TKPR is an extremely short sequence that generates minimal steric hindrance and hardly interferes with the core peptide segment in forming a cross-beta-sheet structure. The lysine (K) and arginine (R) in the sequence carry positive charges, making it highly hydrophilic. This ensures that during fiber assembly, the Tuftsin sequence tends to be exposed to the external aqueous environment rather than buried in the hydrophobic fiber core.
+</p>
+<p>
+  When connecting Tuftsin and FuncPept, we use flexible linker peptide glycine-serine (1-2 GGGGS) repeat sequences; glycine provides flexibility, and serine provides hydrogen bonds to interact with water molecules, ensuring that TKPR is fully exposed outside the fiber skeleton for recognition by membrane receptors on macrophages.
+</p>
+
+<figure class="design-figure">
+  <img src="../static/img/design/fig5.png" alt="Fig.5 overall peptide design">
+  <figcaption>Fig.5 The Overall Peptide Design.</figcaption>
+</figure>
+
+<h3>Immunosuppression</h3>
+<p>
+  Excessive inflammation caused by over-accumulation of phagocytes such as macrophages during tumor phagocytosis presents severe challenges in cancer therapy. Instead of suppressing tumor progression, over-aggregated tumor-associated macrophages (TAMs) are frequently reprogrammed toward the M2 phenotype in the tumor microenvironment (TME). M2-type TAMs promote tumor growth, angiogenesis, drug resistance, and extracellular matrix remodeling by secreting anti-inflammatory and pro-angiogenic factors. Meanwhile, chronic inflammation enriches immunosuppressive cells, and the CCL2/CCR2 axis recruits monocytes that subsequently differentiate into M2 macrophages, further aggravating immunosuppression and facilitating tumor immune escape. Consequently, excessive inflammation and immunosuppression synergistically induce resistance to conventional chemoradiotherapy and immunotherapy.
+</p>
+<p>
+  To address these issues, a combinatorial strategy using INCB3344 and interferon-gamma (IFN-gamma), combined with optimized administration and nanodelivery systems, is proposed. INCB3344, a CCR2 antagonist, blocks the CCL2/CCR2 axis to reduce infiltration of immunosuppressive M2-type TAMs. IFN-gamma drives macrophage polarization toward the pro-inflammatory, anti-tumor M1 phenotype, which enhances phagocytosis, antigen presentation, and anti-tumor immune responses, thereby reversing immunosuppression. Precise dosing regimens, including oral delivery for INCB3344 and injectable or inhalable delivery for IFN-gamma, are recommended, with sequential or simultaneous administration to balance efficacy and safety.
+</p>
+<p>
+  Therapeutic evaluation involves monitoring tumor burden via LDH. Furthermore, encapsulation of INCB3344 and IFN-gamma in functional nanocarriers enables targeted pulmonary delivery, stimuli-responsive release, and synergistic co-delivery, improving local drug concentration while reducing systemic toxicity. This integrated approach is expected to attenuate excessive inflammation, alleviate immunosuppression, reshape the immune microenvironment, and enhance anti-tumor immunity in small-cell lung cancer.
+</p>
+
+<figure class="design-figure">
+  <img src="../static/img/design/fig6.png" alt="Fig.6 schematic illustration of short peptide secretion">
+  <figcaption>Fig.6 Schematic Illustration of Short Peptide Secretion.</figcaption>
+</figure>
+
+<h2>6. Biosafety Module: Programmed Suicide Switch</h2>
+<p>
+  To ensure strict biosafety and environmental containment, the engineered bacteria (derived from a delta-msbB chassis to minimize endotoxin toxicity and prevent systemic inflammation) are equipped with a programmable suicide switch, which employs different promoters for in vitro and in vivo regulation. In vitro, the ParaC promoter drives expression of the thyA gene in the presence of arabinose, effectively complementing thymidine auxotrophy and allowing robust bacterial expansion. Upon administration, control of thyA shifts to the lactate-responsive promoter PlldR. This transition creates a strict survival dependency on the high-lactate milieu characteristic of the small cell lung cancer (SCLC) tumor microenvironment (TME). This module guarantees controlled clearance of the engineered strain both in vivo and ex vivo, meeting high biosafety standards.
+</p>
+
+<figure class="design-figure">
+  <img src="../static/img/design/fig7.png" alt="Fig.7 gene structure of biosafety module">
+  <figcaption>Fig.7 Gene Structure of Biosafety Module.</figcaption>
+</figure>
 
 <h2>References</h2>
 <ul>
-  <li>Samadi, M., Majidzadeh-A, K., Salehi, M., Jalili, N., Noorinejad, Z., Mosayebzadeh, M., Muhammadnejad, A., Sharif Khatibi, A., Moradi-Kalbolandi, S., & Farahmand, L. (2021). Engineered hypoxia-responding Escherichia coli carrying cardiac peptide genes, suppresses tumor growth, angiogenesis and metastasis in vivo. Journal of biological engineering, 15(1), 20. https://doi.org/10.1186/s13036-021-00269-2</li>
-  <li>Chen, H., Lei, P., Ji, H., Yang, Q., Peng, B., Ma, J., Fang, Y., Qu, L., Li, H., Wu, W., Jin, L., & Sun, D. (2023). Advances in Escherichia coli Nissle 1917 as a customizable drug delivery system for disease treatment and diagnosis strategies. Materials today. Bio, 18, 100543. https://doi.org/10.1016/j.mtbio.2023.100543</li>
-  <li>Janssen K, Claes F, Van de Velde D, Wehbi VL, Houben B, Lampl Y, Nys M, Khodaparast L, Khodaparast L, Louros N, van der Kant R, Verniers J, Garcia T, Ramakers M, Konstantoulea K, Maragkou K, Duran-Romaria R, Musteanu M, Barbacid M, Scameaux B, Beirnaert E, Schymkowitz J, Rousseau F. Exploiting the intrinsic misfolding propensity of the KRAS oncoprotein. Proc Natl Acad Sci U S A. 2023 Feb 28;120(9):e2214921120. doi: 10.1073/pnas.2214921120. Epub 2023 Feb 22. PMID: 36812200; PMCID: PMC9992772.</li>
-  <li>Fernandez-Escamilla AM, Rousseau F, Schymkowitz J, Serrano L. Prediction of sequence-dependent and mutational effects on the aggregation of peptides and proteins. Nat Biotechnol. 2004 Oct;22(10):1302-6. doi: 10.1038/nbt1012. Epub 2004 Sep 12. PMID: 15361882.</li>
-  <li>Rousseau F, Schymkowitz J, Serrano L. Protein aggregation and amyloidosis: confusion of the kinds? Curr Opin Struct Biol. 2006 Feb;16(1):118-26. doi: 10.1016/j.sbi.2006.01.011. Epub 2006 Jan 24. PMID: 16434184.</li>
-  <li>Gentschev, I., et al. (2002). "The E. coli alpha-hemolysin secretion system and its use in vaccine development." Trends in Microbiology.</li>
-  <li>Kanak, B., et al. (2023). "Engineering Escherichia coli Nissle 1917 for the delivery of therapeutic proteins."</li>
-  <li>Yao, X., et al. (2016). "Matrix metalloproteinase-activated 'smart' drug delivery systems: strategies and applications." Progress in Polymer Science.</li>
-  <li>Zhuang WR, Xue WC, Liang C, et al. Bacterial Foreignization Nanosystem Elicits Multi-Phenotypic T Cells for Antitumor Immunity. Adv Sci (Weinh). 2025;12(38):e04155. doi:10.1002/advs.202504155</li>
-  <li>Jurėnas, D.; Fraikin, N.; Goormaghtigh, F.; Van Melderen, L. Biology and Evolution of Bacterial Toxin–Antitoxin Systems. Nat Rev Microbiol 2022, 20 (6), 335–350. https://doi.org/10.1038/s41579-021-00661-1.</li>
+  <li>Rudin, C.M., Brambilla, E., Faivre-Finn, C. et al. Small-cell lung cancer. Nat Rev Dis Primers 7, 3 (2021).</li>
+  <li>Samadi, M. et al. Engineered hypoxia-responding Escherichia coli carrying cardiac peptide genes, suppresses tumor growth, angiogenesis and metastasis in vivo. J. Biol. Eng. 15, 20 (2021).</li>
+  <li>Redenti, A. et al. Probiotic neoantigen delivery vectors for precision cancer immunotherapy. Nature 635, 453-461 (2024).</li>
+  <li>Chen, H. et al. Advances in Escherichia coli Nissle 1917 as a customizable drug delivery system for disease treatment and diagnosis strategies. Mater. Today Bio 18, 100543 (2023).</li>
+  <li>Janssen, K. et al. Exploiting the intrinsic misfolding propensity of the KRAS oncoprotein. Proc. Natl. Acad. Sci. U. S. A. 120, e2214921120 (2023).</li>
+  <li>Li, Z. et al. Microrobots for pulmonary drug delivery. Nat. Rev. Bioeng. 4, 12-25 (2026).</li>
+  <li>Fernandez-Escamilla, A. M. et al. Prediction of sequence-dependent and mutational effects on the aggregation of peptides and proteins. Nat. Biotechnol. 22, 1302-1306 (2004).</li>
+  <li>Rousseau, F. et al. Protein aggregation and amyloidosis: confusion of the kinds? Curr. Opin. Struct. Biol. 16, 118-126 (2006).</li>
+  <li>Gentschev, I. et al. The E. coli alpha-hemolysin secretion system and its use in vaccine development. Trends Microbiol. 10, 39-45 (2002).</li>
+  <li>Kanak, B. et al. Engineering Escherichia coli Nissle 1917 for the delivery of therapeutic proteins. Trends Pharmacol. Sci. 44, 761-773 (2023).</li>
+  <li>Yao, X. et al. Matrix metalloproteinase-activated 'smart' drug delivery systems: strategies and applications. Prog. Polym. Sci. 57, 1-24 (2016).</li>
+  <li>Zhuang, W. R. et al. Bacterial foreignization nanosystem elicits multi-phenotypic T cells for antitumor immunity. Adv. Sci. 12, e04155 (2025).</li>
+  <li>Jurenas, D. et al. Biology and evolution of bacterial toxin-antitoxin systems. Nat. Rev. Microbiol. 20, 335-350 (2022).</li>
+  <li>Steidler, L. et al. Biological containment of genetically modified Lactococcus lactis for intestinal delivery of human interleukin 10. Nat. Biotechnol. 21, 785-789 (2003).</li>
+  <li>Toso, J. F. et al. Phase I study of the intravenous administration of attenuated Salmonella typhimurium to patients with metastatic melanoma. J. Clin. Oncol. 20, 142-152 (2002).</li>
+  <li>Zou, Z. P. et al. Self-adjusting engineered probiotic for targeted tumor colonization and local therapeutic delivery. Adv. Sci. 12, e06486 (2025).</li>
 </ul>
 
 

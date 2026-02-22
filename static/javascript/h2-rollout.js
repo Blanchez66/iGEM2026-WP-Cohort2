@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapper.className = 'collapse-wrapper';
         wrapper.style.overflow = 'hidden';
         wrapper.style.transition = 'max-height 0.5s ease-out, opacity 0.3s ease';
+        wrapper.style.opacity = '1';
         
         let next = h2.nextElementSibling;
         while (next && next.tagName !== 'H2') {
@@ -26,20 +27,50 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         h2.parentNode.insertBefore(wrapper, next);
 
+        let isCollapsed = false;
+
+        const setExpanded = () => {
+            isCollapsed = false;
+            wrapper.style.maxHeight = 'none';
+            wrapper.style.opacity = '1';
+            icon.style.transform = 'rotate(0deg)';
+        };
+
+        const collapse = () => {
+            isCollapsed = true;
+            // Start from full content height so closing animation is smooth.
+            wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+            window.requestAnimationFrame(() => {
+                wrapper.style.maxHeight = '0px';
+                wrapper.style.opacity = '0';
+            });
+            icon.style.transform = 'rotate(-90deg)';
+        };
+
+        const expand = () => {
+            isCollapsed = false;
+            wrapper.style.opacity = '1';
+            wrapper.style.maxHeight = '0px';
+            window.requestAnimationFrame(() => {
+                wrapper.style.maxHeight = wrapper.scrollHeight + 'px';
+            });
+            icon.style.transform = 'rotate(0deg)';
+        };
+
         h2.addEventListener('click', () => {
-            const isCollapsed = wrapper.style.maxHeight === '0px';
-            
             if (isCollapsed) {
-                wrapper.style.maxHeight = wrapper.scrollHeight + "px";
-                wrapper.style.opacity = "1";
-                icon.style.transform = 'rotate(0deg)';
+                expand();
             } else {
-                wrapper.style.maxHeight = "0px";
-                wrapper.style.opacity = "0";
-                icon.style.transform = 'rotate(-90deg)';
+                collapse();
             }
         });
 
-        wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+        wrapper.addEventListener('transitionend', (event) => {
+            if (event.propertyName === 'max-height' && !isCollapsed) {
+                wrapper.style.maxHeight = 'none';
+            }
+        });
+
+        setExpanded();
     });
 });

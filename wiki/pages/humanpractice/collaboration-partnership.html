@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+  
+{% block title %}Collaboration & Partnership{% endblock %}
+{% block lead %}Every individual, regardless of background or experience, should have an equal opportunity to engage with scientific knowledge and technological development.{% endblock %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col">
+    <h2>
+      PDF
+    </h2>
+    <iframe src="{{ url_for('static', filename='pdf/Collaboration & Partnership.pdf') }}" width="100%" height="800px" style="border: none;"></iframe>
+  </div>
+</div>
+
+{% endblock %}

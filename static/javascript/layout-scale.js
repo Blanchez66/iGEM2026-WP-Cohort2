@@ -47,14 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Max window width stays 1:1. Only shrink when window gets smaller.
         const scale = clamp(currentWidth / maxViewportWidth, MIN_SCALE, 1);
 
-        body.style.width = `${100 / scale}%`;
-        body.style.overflowX = "hidden";
-
-        body.style.width = `${100 / scale}%`;
-        body.style.overflowX = "hidden";
-
         if (supportsZoom) {
             body.style.zoom = scale.toFixed(4);
+            body.style.width = "";
+            body.style.overflowX = "";
             body.style.transform = "";
             body.style.transformOrigin = "";
             return;
@@ -62,8 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Fallback for browsers without `zoom`.
         body.style.zoom = "";
+        body.style.width = "";
+        body.style.overflowX = "";
         body.style.transform = `scale(${scale.toFixed(4)})`;
-        body.style.transformOrigin = "top left";
+        body.style.transformOrigin = "top center";
     };
 
     let resizeTimer = null;

@@ -242,32 +242,64 @@ footer a:hover { color: #527379; text-decoration: underline; }
     font-family: 'Questrial', serif;
     font-size: 1.2rem;
     line-height: 1.7;
+    padding-left: 36px;
+    padding-right: 60px;
 }
 #main-content h1,
-#main-content h2,
+#main-content h2{
+    font-family: 'Gabarito', sans-serif;
+    color: #314549;
+    display: inline-block;
+    border-bottom: 3px solid currentColor;
+    padding-bottom: 0.15rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
 #main-content h3{
     font-family: 'Gabarito', sans-serif;
+    color: #634e37;
+    text-shadow: 0 0.2px 1.4px currentColor;
     font-weight: 700;
 }
-#main-content h4, 
+#main-content h4{
+    color:#bad1e2
+}
 #main-content h5, 
 #main-content h6 {
     font-family: 'Gabarito', serif;
     font-weight: 700;
     scroll-margin-top: 80px;
-
+}
+#main-content p strong {
+    font-family: 'Gabarito', serif;
+    font-weight: 800;
 }
 
-h2{
-    margin-bottom: 20px;
+#main-content img {
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transform-origin: center center;
+    cursor: pointer;
 }
 
-h2:hover {
-    color: #527379;
+#main-content img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
 }
 
-h3{
-    color:#634e37
+.bg-hero h1,
+.hero-section .hero-title {
+    text-shadow: none !important;
+    transition: transform 0.25s ease, text-shadow 0.25s ease;
+    transform-origin: left center;
+    cursor: pointer;
+}
+
+.bg-hero h1:hover,
+.hero-section .hero-title:hover {
+    text-shadow: 0 2px 10px currentColor !important;
+    transform: scale(1.04);
 }
 
 .collapse-wrapper {

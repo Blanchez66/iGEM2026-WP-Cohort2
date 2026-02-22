@@ -28,22 +28,7 @@
     <title>Project Design | iGEM Winter Project</title>
     
     
-<style>
-  .design-figure {
-    margin: 1.5rem 0 2rem;
-    text-align: center;
-  }
-  .design-figure img {
-    max-width: 100%;
-    height: auto;
-  }
-  .design-figure figcaption {
-    margin-top: 0.6rem;
-    color: #6c757d;
-    font-size: 0.92rem;
-    text-align: center;
-  }
-</style>
+<link href="../static/css/design.css" rel="stylesheet">
 
 </head>
 <body data-bs-spy="scroll" data-bs-target="#toc-sidebar" data-bs-offset="100">
@@ -215,13 +200,13 @@
 <p><strong>Easy to work with:</strong> EcN is supported by a comprehensive toolkit for synthetic biology.</p>
 
 <figure class="design-figure">
-  <img src="../static/img/design/fig1.png" alt="Fig.1 schematic of inhaled engineered bacteria for SCLC therapy">
+  <img src="../static/img/design/fig1.png" style="max-width: 620px;" alt="Fig.1 schematic of inhaled engineered bacteria for SCLC therapy">
   <figcaption>Fig.1 Schematic of Inhaled Engineered Bacteria for SCLC Therapy. a) Schematic showing the mechanism of engineered bacteria. b) The gene structure of two plasmids.</figcaption>
 </figure>
 
 <h2>1. Targeted Pulmonary Delivery via Aerosolization</h2>
 <p>
-  Nebulization is employed as the primary administration route to deliver engineered bacteria directly to the lung. By fine-tuning the aerodynamic diameter of aerosol particles, we ensure efficient deposition within the bronchial and distal airway regions — the primary sites of small-cell lung cancer (SCLC). Beyond physical delivery, the engineered strain leverages its innate tropism for the unique tumor microenvironment (TME), characterized by hypoxia and high lactate levels. These metabolic cues serve as natural chemoattractants, guiding the bacteria to preferentially colonize the anaerobic, necrotic core of SCLC lesions.
+  Nebulization is employed as the primary administration route to deliver engineered bacteria directly to the lung. By fine-tuning the aerodynamic diameter of aerosol particles, we ensure efficient deposition within the bronchial and distal airway regions — the primary sites of SCLC. Beyond physical delivery, the engineered strain leverages its innate tropism for the unique tumor microenvironment (TME), characterized by hypoxia and high lactate levels. These metabolic cues serve as natural chemoattractants, guiding the bacteria to preferentially colonize the anaerobic, necrotic core of SCLC lesions.
 </p>
 <p>
   To further enhance precision, these bacteria are functionalized with surface-expressed DLL3 nanobodies, enabling active molecular recognition of SCLC cells. This multi-stage targeting strategy — integrating optimized physical deposition, innate metabolic tropism, and ligand-receptor mediated sequestration — maximizes intrapulmonary bacterial concentration while strictly minimizing systemic exposure.
@@ -233,7 +218,7 @@
 </p>
 
 <figure class="design-figure">
-  <img src="../static/img/design/fig2.png" alt="Fig.2 gene structure of targeting and colonization module">
+  <img src="../static/img/design/fig2.png" style="max-width: 520px;" alt="Fig.2 gene structure of targeting and colonization module">
   <figcaption>Fig.2 Gene Structure of Targeting and Colonization Module.</figcaption>
 </figure>
 
@@ -243,7 +228,7 @@
 </p>
 
 <figure class="design-figure">
-  <img src="../static/img/design/fig3.png" alt="Fig.3 schematic illustration of quorum sensing circuit">
+  <img src="../static/img/design/fig3.png" style="max-width: 520px;" alt="Fig.3 schematic illustration of quorum sensing circuit">
   <figcaption>Fig.3 Schematic Illustration of Quorum Sensing Circuit.</figcaption>
 </figure>
 
@@ -259,7 +244,7 @@
 </p>
 
 <figure class="design-figure">
-  <img src="../static/img/design/fig4.png" alt="Fig.4 schematic diagram of short peptides">
+  <img src="../static/img/design/fig4.png" style="max-width: 620px;" alt="Fig.4 schematic diagram of short peptides">
   <figcaption>Fig.4 Schematic Diagram of Short Peptides.</figcaption>
 </figure>
 
@@ -270,6 +255,21 @@
 <p>
   We added negatively charged shielding sequences to both ends of the designed FuncPept, which hinder contact between FuncPept and the APR of the target protein, thereby shielding its function. The amino acids connecting FuncPept and the shielding sequence are cleavage sites for Legumain. After our peptide segment enters cancer cells, Legumain cleaves off the negatively charged shielding sequence, thereby enabling FuncPept to exert its function.
 </p>
+
+<h3>Functional Peptide Secretion</h3>
+<p>
+  The amyloid aggregation caused by long-term retention of FuncPept in the body may induce toxicity. To reduce and degrade these harmful amyloids, we turned our attention to macrophages. Macrophages phagocytize and degrade formed amyloids, thereby reducing their toxic effects.
+</p>
+
+<figure class="design-figure">
+  <div class="hover-media-switch" style="max-width: 720px;" aria-label="Fig.5 hover to play video">
+    <img src="../static/img/design/fig5.png" alt="Fig.5 overall peptide design">
+    <video muted playsinline preload="metadata" aria-hidden="true">
+      <source src="../static/video/Cut.mp4" type="video/mp4">
+    </video>
+  </div>
+  <figcaption>Fig.5 The Overall Peptide Design. (click it!)</figcaption>
+</figure>
 
 <h3>Amyloid Clearance</h3>
 <p>
@@ -283,33 +283,45 @@
 </p>
 
 <figure class="design-figure">
-  <img src="../static/img/design/fig5.png" alt="Fig.5 overall peptide design">
-  <figcaption>Fig.5 The Overall Peptide Design.</figcaption>
+  <img src="../static/img/design/fig6.png" style="max-width: 620px;" alt="Fig.6 schematic illustration of short peptide secretion">
+  <figcaption>Fig.6 Schematic Illustration of Short Peptide Secretion.</figcaption>
 </figure>
 
-<h3>Immunosuppression</h3>
-<p>
-  Excessive inflammation caused by over-accumulation of phagocytes such as macrophages during tumor phagocytosis presents severe challenges in cancer therapy. Instead of suppressing tumor progression, over-aggregated tumor-associated macrophages (TAMs) are frequently reprogrammed toward the M2 phenotype in the tumor microenvironment (TME). M2-type TAMs promote tumor growth, angiogenesis, drug resistance, and extracellular matrix remodeling by secreting anti-inflammatory and pro-angiogenic factors. Meanwhile, chronic inflammation enriches immunosuppressive cells, and the CCL2/CCR2 axis recruits monocytes that subsequently differentiate into M2 macrophages, further aggravating immunosuppression and facilitating tumor immune escape. Consequently, excessive inflammation and immunosuppression synergistically induce resistance to conventional chemoradiotherapy and immunotherapy.
-</p>
+<h3>Combination Therapy</h3>
 <p>
   To address these issues, a combinatorial strategy using INCB3344 and interferon-gamma (IFN-gamma), combined with optimized administration and nanodelivery systems, is proposed. INCB3344, a CCR2 antagonist, blocks the CCL2/CCR2 axis to reduce infiltration of immunosuppressive M2-type TAMs. IFN-gamma drives macrophage polarization toward the pro-inflammatory, anti-tumor M1 phenotype, which enhances phagocytosis, antigen presentation, and anti-tumor immune responses, thereby reversing immunosuppression. Precise dosing regimens, including oral delivery for INCB3344 and injectable or inhalable delivery for IFN-gamma, are recommended, with sequential or simultaneous administration to balance efficacy and safety.
 </p>
 <p>
-  Therapeutic evaluation involves monitoring tumor burden via LDH. Furthermore, encapsulation of INCB3344 and IFN-gamma in functional nanocarriers enables targeted pulmonary delivery, stimuli-responsive release, and synergistic co-delivery, improving local drug concentration while reducing systemic toxicity. This integrated approach is expected to attenuate excessive inflammation, alleviate immunosuppression, reshape the immune microenvironment, and enhance anti-tumor immunity in small-cell lung cancer.
+  To counteract these hurdles, we propose a combinatorial strategy centered on Interferon-γ (IFN-
+  γ), integrated with optimized administration protocols and advanced nanodelivery systems. IFN-
+  γ serves as a potent effector to reprogram macrophages toward the pro-inflammatory M1
+  phenotype, thereby enhancing phagocytosis, antigen presentation, and robust anti-tumor
+  immunity. To balance therapeutic efficacy with safety, we emphasize precise dosing regimens,
+  including inhalable IFN-γ delivery via sequential or simultaneous administration. Furthermore,
+  encapsulating IFN-γ within functional nanocarriers facilitates targeted pulmonary delivery and
+  stimuli-responsive release, maximizing local drug concentration while mitigating systemic
+  toxicity. This integrated approach aims to attenuate pathological inflammation, reshape the
+  TME, and ultimately potentiate anti-tumor responses in SCLC.
 </p>
 
-<figure class="design-figure">
-  <img src="../static/img/design/fig6.png" alt="Fig.6 schematic illustration of short peptide secretion">
-  <figcaption>Fig.6 Schematic Illustration of Short Peptide Secretion.</figcaption>
-</figure>
 
 <h2>6. Biosafety Module: Programmed Suicide Switch</h2>
 <p>
-  To ensure strict biosafety and environmental containment, the engineered bacteria (derived from a delta-msbB chassis to minimize endotoxin toxicity and prevent systemic inflammation) are equipped with a programmable suicide switch, which employs different promoters for in vitro and in vivo regulation. In vitro, the ParaC promoter drives expression of the thyA gene in the presence of arabinose, effectively complementing thymidine auxotrophy and allowing robust bacterial expansion. Upon administration, control of thyA shifts to the lactate-responsive promoter PlldR. This transition creates a strict survival dependency on the high-lactate milieu characteristic of the small cell lung cancer (SCLC) tumor microenvironment (TME). This module guarantees controlled clearance of the engineered strain both in vivo and ex vivo, meeting high biosafety standards.
+  To ensure strict biosafety and environmental containment, the ∆msbB - based engineered
+  bacteria are further modified by deleting the endogenous thyA gene, creating a thymidylate
+  synthase-deficient auxotroph. In vitro, the ParaC promoter drives the expression of the thyA
+  gene in the presence of arabinose, effectively complementing the thymidine auxotrophy and
+  allowing for robust bacterial expansion; Upon administration, the control of thyA shifts to the
+  lactate-responsive promoter PlldR. This transition creates a strict survival dependency on the
+  high-lactate milieu characteristic of the SCLC TME. Upon administration, the control of thyA
+  shifts to the lactate-responsive promoter PlldR. This transition creates a strict survival
+  dependency on the high-lactate milieu characteristic of the SCLC TME.This module guarantees
+  controlled clearance of the engineered strain both in vivo and ex vivo, meeting high biosafety
+  standards.
 </p>
 
 <figure class="design-figure">
-  <img src="../static/img/design/fig7.png" alt="Fig.7 gene structure of biosafety module">
+  <img src="../static/img/design/fig7.png" style="max-width: 620px;" alt="Fig.6 gene structure of biosafety module">
   <figcaption>Fig.7 Gene Structure of Biosafety Module.</figcaption>
 </figure>
 
@@ -332,6 +344,33 @@
   <li>Toso, J. F. et al. Phase I study of the intravenous administration of attenuated Salmonella typhimurium to patients with metastatic melanoma. J. Clin. Oncol. 20, 142-152 (2002).</li>
   <li>Zou, Z. P. et al. Self-adjusting engineered probiotic for targeted tumor colonization and local therapeutic delivery. Adv. Sci. 12, e06486 (2025).</li>
 </ul>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const switcher = document.querySelector('.hover-media-switch');
+    if (!switcher) return;
+
+    const video = switcher.querySelector('video');
+    if (!video) return;
+
+    function playVideo() {
+      switcher.classList.add('is-playing');
+      const promise = video.play();
+      if (promise && typeof promise.catch === 'function') {
+        promise.catch(function () {});
+      }
+    }
+
+    function stopVideo() {
+      switcher.classList.remove('is-playing');
+      video.pause();
+      video.currentTime = 0;
+    }
+
+    switcher.addEventListener('mouseenter', playVideo);
+    switcher.addEventListener('mouseleave', stopVideo);
+  });
+</script>
 
 
       </div>

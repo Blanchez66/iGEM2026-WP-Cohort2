@@ -1,0 +1,65 @@
+.design-figure {
+  margin: 1.5rem 0 2rem;
+  text-align: center;
+}
+
+.design-figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+.design-figure figcaption {
+  margin-top: 0.6rem;
+  color: #6c757d;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.hover-media-switch {
+  position: relative;
+  display: inline-block;
+  max-width: 620px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.hover-media-switch:hover {
+  transform: scale(1.04);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hover-media-switch img,
+.hover-media-switch video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hover-media-switch img {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: opacity 0.2s ease;
+}
+
+.hover-media-switch video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hover-media-switch.is-playing img {
+  opacity: 0;
+}
+
+.hover-media-switch.is-playing video {
+  opacity: 1;
+}

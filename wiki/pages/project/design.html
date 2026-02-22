@@ -6,11 +6,97 @@
 {% block page_content %}
 
 
-<h2>Chassis Selection</h2>
-<h3> Escherichia coli Nissle 1917 (EcN)</h3>
+<h2>
+  Chassis Organism
+</h2>
 <p>
-Our project utilizes <em>Escherichia coli</em> Nissle 1917 (EcN) as the core chassis. As a clinically validated probiotic, EcN offers an exemplary safety profile and high human compatibility. Crucially, EcN exhibits innate tumor-tropic motility, autonomously migrating toward the hypoxic and high-lactate tumor microenvironments (TME) characteristic of Small Cell Lung Cancer (SCLC). Since <em>E. coli</em> is a constituent of the native pulmonary microbiota, our engineered EcN is optimized to maintain ecological homeostasis while colonizing the respiratory tract.
+  We aim to employ engineered bacteria as a platform for drug production and 
+  delivery , and through rational design, make treatment for SCLC more intelligent and 
+  personalized. Accordingly, we propose the following requirements for the chassis 
+  organism:
 </p>
+<h4>
+  Safety
+</h4>
+<p>
+  The engineered bacteria should adapt to the pulmonary environment, colonize without causing
+  tissue damage, pulmonary inflammation, or excessive immune responses. They must colonize
+  only at target sites and not in healthy tissues. They must not disseminate into the bloodstream,
+  and be unable to survive in external environments. The death of engineered bacteria should be
+  controllable.
+</p>
+<h4>
+  Stability
+</h4>
+<p>
+  The engineered bacteria should stably colonize target sites with acceptable biocompatibility to
+  support long-term administration.
+</p>
+<h4>
+  Targeting
+</h4>
+<p>
+  The engineered bacteria should be able to recognize the tumor microenvironment in the
+  patient's lung, accumulate and colonize at the target site, and initiate drug secretion.
+</p>
+<h4>
+  Secretion
+</h4>
+<p>
+  The engineered bacteria should efficiently synthesize and secrete the designed peptides for
+  treatment.  
+</p>
+<h4>
+  Genetic tractability
+</h4>
+<p>
+  The engineered bacteria should be amenable for modular design and experimental validation,
+  facilitating iterative engineering cycles.
+</p>
+<p>
+  Considering the therapeutic needs of SCLC — compatibility with the pulmonary environment
+  and action at lung tumor sites — we initially selected Lactobacillus plantarum (referencing a
+  previous iGEM project on lung-colonizing engineered bacteria) and Escherichia coli Nissle 1917
+  (EcN) as core candidate chassis organisms.
+</p>
+<p>
+  Although Lactobacillus plantarum has precedent in pulmonary delivery from prior projects and
+  exhibits advantages in immunomodulation, our project requires more functional modules and
+  relatively complex drug secretion pathways. Compared with Escherichia coli, lactic acid bacteria
+  have fewer genetic modification tools, lower transformation efficiency, and less sophisticated
+  protein secretion systems than Gram-negative bacteria, which limit the efficiency of peptide
+  synthesis and secretion. Therefore, based on project requirements, we ultimately selected EcN
+  as the chassis for engineering.
+</p>
+<p>
+  Relative to the aforementioned requirements, EcN presents the following advantages:
+</p>
+<p>
+  Safe: As a probiotic, EcN has a long history of safe clinical use and is sensitive to multiple
+  antibiotics. As a Gram-negative bacterium, its outer membrane vesicles (OMVs) can induce
+  immune activation without triggering excessive inflammation.
+</p>
+<p>
+  Stable: EcN is natively facultatively anaerobic and can adapt to the hypoxic pulmonary
+  environment. Although wild-type EcN is not naturally found in the lung, its pulmonary mucosal
+  adhesion can be further improved. Given its high editability, EcN can be engineered to better
+  suit the needs of lung colonization.
+</p>
+<p>
+  Precise: EcN natively possesses tumor tropism, driven by hypoxia-directed accumulation and
+  adaptation to the immunosuppressive microenvironment. The hypoxic core of tumors attracts
+  facultative anaerobes, while the immunosuppressive tumor milieu permits bacterial survival; in
+  contrast, bacteria are cleared by immune mechanisms in healthy tissues.[1]
+</p>
+<p>
+  Effective: EcN possesses a well-characterized protein secretion system, making it suitable for
+  peptide production.
+</p>
+<p>
+  Easy to work with: EcN is supported by a comprehensive toolkit for synthetic biology.
+</p>
+
+
 
 <h2>Engineering Strategy and Modular Circuits</h2>
 

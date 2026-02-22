@@ -293,6 +293,17 @@ footer a:hover { color: #527379; text-decoration: underline; }
     font-weight: 800;
 }
 
+#main-content a {
+    color: #5282a8;
+    text-decoration-color: #5282a8;
+}
+
+#main-content a:hover,
+#main-content a:focus {
+    color: #3f6b8f;
+    text-decoration-color: #3f6b8f;
+}
+
 #main-content img {
     border-radius: 14px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);

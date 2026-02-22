@@ -68,6 +68,22 @@ html {
     border-radius: 5px;
 }
 
+.mobile-nav-toggle {
+    border: 1.5px solid #c9cece;
+    border-radius: 12px;
+    padding: 0.5rem 0.75rem;
+}
+
+.mobile-nav-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(82, 115, 121, 0.18);
+}
+
+.mobile-nav-toggle .navbar-toggler-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2865, 72, 77, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 /* dropdown menu */
 @keyframes fadeInDown {
     from {
@@ -307,4 +323,32 @@ footer a:hover { color: #527379; text-decoration: underline; }
 .collapse-wrapper {
     padding-left: 15px;
     margin-bottom: 20px;
+}
+
+@media (max-width: 1199.98px) {
+    .navbar > .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .navbar-collapse {
+        margin-top: 0.75rem;
+        padding: 0.6rem 0.75rem;
+        border: 1px solid #e5e3dc;
+        border-radius: 12px;
+        background-color: #fcfbf9;
+        box-shadow: 0 8px 20px rgba(30, 35, 38, 0.1);
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        margin-right: 0;
+        margin-bottom: 0.15rem;
+        padding: 0.6rem 0.75rem;
+    }
+
+    .navbar .dropdown-menu {
+        margin-left: 0.75rem;
+        box-shadow: none;
+        border: 1px solid #ece9df;
+    }
 }

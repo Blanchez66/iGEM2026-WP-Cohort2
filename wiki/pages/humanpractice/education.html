@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+  
+{% block title %}Education{% endblock %}
+{% block lead %}Innovative educational tools and outreach activities have the ability to establish a two-way dialogue with new communities by discussing public values and the science behind synthetic biology.{% endblock %}
+
+{% block page_content %}
+
+<div class="row mt-4">
+  <div class="col">
+    <h2>PDF</h2>
+    <iframe src="{{ url_for('static', filename='pdf/Education.pdf') }}" width="100%" height="800px" style="border: none;"></iframe>
+  </div>
+</div>
+
+{% endblock %}

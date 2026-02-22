@@ -13,7 +13,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto pe-3">
+      <ul class="navbar-nav ms-auto pe-3 pe-lg-6">
 
         <!---- HOME ---->
         <li class="nav-item">
@@ -75,14 +75,13 @@
         <!---- Engagement ---->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEngagement" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Engagement
+            Human Practice
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownEngagement">
             <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practice') }}">Human Practice</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='integrated-human-practice') }}">Integrated Human Practice</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainability</a></li>
           </ul>
         </li>
 

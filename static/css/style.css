@@ -12,6 +12,30 @@ body {
     background-color: #ffffff;
 }
 
+/* Scrollbar theme */
+html {
+    scrollbar-color: #F0AD4E #fcfbf9;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fcfbf9;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #F0AD4E;
+    border-radius: 10px;
+    border: 2px solid #fcfbf9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #dd983a;
+}
+
 .left-aligned { margin-left: auto; }
 .bg-dark { background-color: #fcfbf9 !important; }
 .bg-hero { background-color: #fcfbf9; }

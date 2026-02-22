@@ -304,6 +304,11 @@ footer a:hover { color: #527379; text-decoration: underline; }
     text-decoration-color: #3f6b8f;
 }
 
+#main-content .btn-outline-secondary:hover,
+#main-content .btn-outline-secondary:focus {
+    color: #ffffff;
+}
+
 #main-content img {
     border-radius: 14px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
